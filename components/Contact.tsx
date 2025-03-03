@@ -7,7 +7,7 @@ import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import ScrollReveal from "@/Components/ScrollReveal";
+import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
 
 const textVariants = {

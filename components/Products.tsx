@@ -1,15 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import ScrollReveal from "@/Components/ScrollReveal";
-import PulsingButton from '@/Components/PulsingButton';
+import ScrollReveal from "@/components/ScrollReveal";
+import PulsingButton from "@/components/PulsingButton";
 
-const ProductCard = dynamic(() => import("@/Components/ProductCard"), { ssr: false });
+const ProductCard = dynamic(() => import("@/components/ProductCard"), {
+  ssr: false,
+});
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -18,7 +20,11 @@ const textVariants = {
 
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 1, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1, ease: "easeOut" },
+  },
 };
 
 const productCardVariants = {
@@ -30,9 +36,15 @@ const Products = () => {
   const controlsText = useAnimation();
   const controlsButton = useAnimation();
   const controlsProduct = useAnimation();
-  const { ref: textRef, inView: textInView } = useInView({ triggerOnce: false });
-  const { ref: buttonRef, inView: buttonInView } = useInView({ triggerOnce: false });
-  const { ref: productRef, inView: productInView } = useInView({ triggerOnce: false });
+  const { ref: textRef, inView: textInView } = useInView({
+    triggerOnce: false,
+  });
+  const { ref: buttonRef, inView: buttonInView } = useInView({
+    triggerOnce: false,
+  });
+  const { ref: productRef, inView: productInView } = useInView({
+    triggerOnce: false,
+  });
 
   useEffect(() => {
     if (textInView) controlsText.start("visible");
@@ -51,16 +63,20 @@ const Products = () => {
 
   return (
     <ScrollReveal>
-      <section id="loyalty" className="parallax-section max-container padding-container flex flex-col md:flex-row gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-white">
-        <div className='pl-10 md:pl-20 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[650px]'>
-          <motion.h1 
-            className='text-[40px] text-black font-sans font-medium leading-snug'
+      <section
+        id="loyalty"
+        className="parallax-section max-container padding-container flex flex-col md:flex-row gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-white"
+      >
+        <div className="pl-10 md:pl-20 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[650px]">
+          <motion.h1
+            className="text-[40px] text-black font-sans font-medium leading-snug"
             variants={textVariants}
             initial="hidden"
             animate={controlsText}
             ref={textRef}
           >
-            Leverage our loyalty program to make your customer a greater beneficiary of your own services
+            Leverage our loyalty program to make your customer a greater
+            beneficiary of your own services
           </motion.h1>
           <motion.div
             variants={buttonVariants}

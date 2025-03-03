@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import ScrollReveal from "@/Components/ScrollReveal";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const NewsCards = dynamic(() => import("@/components/NewsCards"), {
   ssr: false,
