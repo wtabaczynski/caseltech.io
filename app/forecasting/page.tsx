@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -10,7 +10,11 @@ const textVariants = {
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 const buttonVariants = {
@@ -20,31 +24,38 @@ const buttonVariants = {
 
 const Forecasting = () => {
   return (
-    <motion.main 
+    <motion.main
       className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-10"
       initial="hidden"
       animate="visible"
     >
-      <motion.h1 
+      <motion.h1
         className="text-4xl font-bold mb-6 text-black text-center"
         variants={textVariants}
       >
-        Sales Forecasting Solutions for OTCF S.A.
+        "Data-Driven Insights: Advanced Reporting & Sales Analytics for Business
+        Growth"
       </motion.h1>
-      
-      <motion.section 
+
+      <motion.section
         className="max-w-6xl flex flex-col md:flex-row items-start gap-10"
         initial="hidden"
         animate="visible"
         variants={textVariants}
       >
         {/* Lewa strona z obrazkiem oraz przyciskami */}
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center md:items-start w-full md:w-1/2"
           variants={textVariants}
         >
           <motion.div variants={imageVariants}>
-            <Image src="/otcf.jpeg" alt="forecasting" width={600} height={350} className="rounded-lg" />
+            <Image
+              src="/otcf.jpeg"
+              alt="forecasting"
+              width={600}
+              height={350}
+              className="rounded-lg"
+            />
           </motion.div>
           <motion.div className="mt-10 flex gap-5" variants={buttonVariants}>
             <Link href="/#contact-us">
@@ -54,33 +65,37 @@ const Forecasting = () => {
             </Link>
           </motion.div>
         </motion.div>
-        
+
         {/* Prawa strona z tekstem */}
-        <motion.div 
+        <motion.div
           className="w-full md:w-1/2 text-black text-lg md:pl-10"
           variants={textVariants}
         >
           <p className="font-bold underline text-lg">Sector: Retail</p>
           <div className="h-6"></div>
           <p>
-            <strong>Implementation and Deployment of Reporting Mechanisms and Automated Customer Behavior Analysis:</strong>
+            <strong>
+              "Data-Driven Insights: Advanced Reporting & Sales Analytics for
+              Business Growth"
+            </strong>
             <br />
-            Implementation and deployment of data pipelines for sales reports (integrations with Google Cloud, AWS, Azure, Microsoft DWH).
-            Development of reports supporting automated analysis of results and achieved margin levels.
-            Creation of reports evaluating the effectiveness of marketing activities, identifying which campaigns attract the most loyal users.
-            MVP of a discount analysis mechanism for campaigns with various discounting strategies while maintaining an appropriate margin level.
-            Automated sales forecasting, taking into account trends, seasonality, and holidays.
-            Evaluation of marketing effectiveness, identifying which campaigns attract the most loyal users.
+            We create and implement automated reporting systems and customer
+            behavior analysis tools that support strategic business decisions.
+            We integrate data from cloud platforms (Google Cloud, AWS, Azure,
+            Microsoft DWH) and develop reports that analyze sales, marketing
+            campaign effectiveness, and customer loyalty. Our solutions include:
+            1. Automated sales forecasting considering trends, seasonality, and
+            external factors. 2. Advanced sales modeling to predict future
+            demand and optimize inventory management. 3. Marketing effectiveness
+            analysis and identification of campaigns that attract loyal users.
+            4. Cost analysis of marketing strategies to maximize ROI and budget
+            efficiency. 5. MVP of a discount analysis mechanism optimizing
+            pricing strategies while maintaining profitability. 6. Customer
+            Behavior Analysis: - User retention, churn, RFM, and basket
+            analysis. With our tools, companies can better manage marketing
+            budgets, increase profitability, and build long-term customer
+            relationships.
           </p>
-          
-            <strong>Customer Behavior Analysis:</strong>
-              <ul className="list-disc pl-5">
-                <li>User retention analysis</li>
-                <li>Churn analysis</li>
-                <li>RFM analysis</li>
-                <li>Basket analysis</li>
-              </ul>
-              
         </motion.div>
       </motion.section>
     </motion.main>
