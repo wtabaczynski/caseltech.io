@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -10,7 +10,11 @@ const textVariants = {
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 const buttonVariants = {
@@ -20,19 +24,19 @@ const buttonVariants = {
 
 const GMU = () => {
   return (
-    <motion.main 
+    <motion.main
       className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-10"
       initial="hidden"
       animate="visible"
     >
-      <motion.section 
+      <motion.section
         className="max-w-6xl flex flex-col md:flex-row items-start gap-10"
         initial="hidden"
         animate="visible"
         variants={textVariants}
       >
         {/* Lewa kolumna – nagłówek, tekst oraz przycisk */}
-        <motion.div 
+        <motion.div
           className="w-full md:w-1/2 text-black"
           variants={textVariants}
         >
@@ -40,16 +44,21 @@ const GMU = () => {
             Equitable and Accessible Software for Injury Detection
           </h1>
           <div className="text-lg leading-relaxed text-justify">
-            <p className="font-bold underline">Sector: Medical</p>
+            <p className="font-bold underline">Sector: Healthcare</p>
             <div className="h-6"></div>
             <p className="mb-4">
-              The Caseltech provides an implementation of an interactive database for the Equitable and Accessible Software for Injury Detection (EAS-ID) project for George Mason University.
+              The Caseltech provides an implementation of an interactive
+              database for the Equitable and Accessible Software for Injury
+              Detection (EAS-ID) project for George Mason University.
             </p>
             <p>
-              The project involves building a unique data repository that combines images of bruises and other injuries with measurements, clinical and demographic information about the victim, and information inferred by artificial intelligence.
+              The project involves building a unique data repository that
+              combines images of bruises and other injuries with measurements,
+              clinical and demographic information about the victim, and
+              information inferred by artificial intelligence.
             </p>
           </div>
-          <motion.div 
+          <motion.div
             className="mt-10 flex justify-end"
             variants={buttonVariants}
           >
@@ -60,13 +69,16 @@ const GMU = () => {
             </Link>
           </motion.div>
         </motion.div>
-        
+
         {/* Prawa kolumna – obrazek */}
-        <motion.div 
-          className="w-full md:w-1/2"
-          variants={imageVariants}
-        >
-          <Image src="/george.jpeg" alt="GMU" width={600} height={350} className="rounded-lg" />
+        <motion.div className="w-full md:w-1/2" variants={imageVariants}>
+          <Image
+            src="/george.jpeg"
+            alt="GMU"
+            width={600}
+            height={350}
+            className="rounded-lg"
+          />
         </motion.div>
       </motion.section>
     </motion.main>
