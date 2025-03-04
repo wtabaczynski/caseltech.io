@@ -45,7 +45,7 @@ const galnaftogaz = () => {
             Galnaftogaz
           </h1>
 
-          <p className="font-bold underline text-xl mb-2">Sector: Retail</p>
+          <p className="font-bold underline text-xl mb-2">Sector: Oil & Gas</p>
 
           <br />
           <br />
