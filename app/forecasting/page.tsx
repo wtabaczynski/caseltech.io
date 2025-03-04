@@ -42,7 +42,63 @@ const Forecasting = () => {
         animate="visible"
         variants={textVariants}
       >
-        {/* Lewa strona z obrazkiem oraz przyciskami */}
+        {/* Lewa strona z tekstem */}
+        <motion.div
+          className="w-full md:w-1/2 text-black text-lg md:pl-10"
+          variants={textVariants}
+        >
+          <p className="font-bold underline text-lg">Sector: Retail</p>
+          <div className="h-6"></div>
+          <p>
+            <strong>
+              "Data-Driven Insights: Advanced Reporting & Sales Analytics for
+              Business Growth"
+            </strong>
+          </p>
+          <p>
+            We create and implement automated reporting systems and customer
+            behavior analysis tools that support strategic business decisions.
+            We integrate data from cloud platforms (Google Cloud, AWS, Azure,
+            Microsoft DWH) and develop reports that analyze sales, marketing
+            campaign effectiveness, and customer loyalty. Our solutions include:
+          </p>
+          <ul className="list-disc pl-5">
+            <li>
+              Automated sales forecasting considering trends, seasonality, and
+              external factors.
+            </li>
+            <li>
+              Advanced sales modeling to predict future demand and optimize
+              inventory management.
+            </li>
+            <li>
+              Marketing effectiveness analysis and identification of campaigns
+              that attract loyal users.
+            </li>
+            <li>
+              Cost analysis of marketing strategies to maximize ROI and budget
+              efficiency.
+            </li>
+            <li>
+              MVP of a discount analysis mechanism optimizing pricing strategies
+              while maintaining profitability.
+            </li>
+            <li>
+              Customer Behavior Analysis:
+              <ul className="list-disc pl-5">
+                <li>User retention</li>
+                <li>Churn prediction</li>
+                <li>RFM analysis</li>
+                <li>Basket analysis</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            With our tools, companies can better manage marketing budgets,
+            increase profitability, and build long-term customer relationships.
+          </p>
+        </motion.div>
+        {/* Prawa strona z obrazkiem oraz przyciskami */}
         <motion.div
           className="flex flex-col items-center md:items-start w-full md:w-1/2"
           variants={textVariants}
@@ -63,60 +119,6 @@ const Forecasting = () => {
               </button>
             </Link>
           </motion.div>
-        </motion.div>
-
-        {/* Prawa strona z tekstem */}
-        <motion.div
-          className="w-full md:w-1/2 text-black text-lg md:pl-10"
-          variants={textVariants}
-        >
-          <p className="font-bold underline text-lg">Sector: Retail</p>
-          <div className="h-6"></div>
-          <p>
-            <strong>
-              "Data-Driven Insights: Advanced Reporting & Sales Analytics for
-              Business Growth"
-            </strong>
-            <br />
-            We create and implement automated reporting systems and customer
-            behavior analysis tools that support strategic business decisions.
-            We integrate data from cloud platforms (Google Cloud, AWS, Azure,
-            Microsoft DWH) and develop reports that analyze sales, marketing
-            campaign effectiveness, and customer loyalty. Our solutions include:
-            <ul>
-              <li>
-                1. Automated sales forecasting considering trends, seasonality,
-                and external factors.
-              </li>
-              <li>
-                2. Advanced sales modeling to predict future demand and optimize
-                inventory management.
-              </li>
-              <li>
-                3. Marketing effectiveness analysis and identification of
-                campaigns that attract loyal users.
-              </li>
-              <li>
-                4. Cost analysis of marketing strategies to maximize ROI and
-                budget efficiency.
-              </li>
-              <li>
-                5. MVP of a discount analysis mechanism optimizing pricing
-                strategies while maintaining profitability.
-              </li>
-              <li>
-                6. Customer Behavior Analysis:
-                <ul>
-                  <li>User retention</li>
-                  <li>Churn prediction</li>
-                  <li>RFM analysis</li>
-                  <li>Basket analysis</li>
-                </ul>
-              </li>
-            </ul>
-            With our tools, companies can better manage marketing budgets,
-            increase profitability, and build long-term customer relationships.
-          </p>
         </motion.div>
       </motion.section>
     </motion.main>
