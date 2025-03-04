@@ -33,8 +33,7 @@ const Forecasting = () => {
         className="text-4xl font-bold mb-6 text-black text-center"
         variants={textVariants}
       >
-        "Data-Driven Insights: Advanced Reporting & Sales Analytics for Business
-        Growth"
+        {/* "Data-Driven Insights: Advanced Reporting & Sales Analytics for Business Growth" */}
       </motion.h1>
 
       <motion.section
@@ -84,17 +83,39 @@ const Forecasting = () => {
             We integrate data from cloud platforms (Google Cloud, AWS, Azure,
             Microsoft DWH) and develop reports that analyze sales, marketing
             campaign effectiveness, and customer loyalty. Our solutions include:
-            1. Automated sales forecasting considering trends, seasonality, and
-            external factors. 2. Advanced sales modeling to predict future
-            demand and optimize inventory management. 3. Marketing effectiveness
-            analysis and identification of campaigns that attract loyal users.
-            4. Cost analysis of marketing strategies to maximize ROI and budget
-            efficiency. 5. MVP of a discount analysis mechanism optimizing
-            pricing strategies while maintaining profitability. 6. Customer
-            Behavior Analysis: - User retention, churn, RFM, and basket
-            analysis. With our tools, companies can better manage marketing
-            budgets, increase profitability, and build long-term customer
-            relationships.
+            <ul>
+              <li>
+                1. Automated sales forecasting considering trends, seasonality,
+                and external factors.
+              </li>
+              <li>
+                2. Advanced sales modeling to predict future demand and optimize
+                inventory management.
+              </li>
+              <li>
+                3. Marketing effectiveness analysis and identification of
+                campaigns that attract loyal users.
+              </li>
+              <li>
+                4. Cost analysis of marketing strategies to maximize ROI and
+                budget efficiency.
+              </li>
+              <li>
+                5. MVP of a discount analysis mechanism optimizing pricing
+                strategies while maintaining profitability.
+              </li>
+              <li>
+                6. Customer Behavior Analysis:
+                <ul>
+                  <li>User retention</li>
+                  <li>Churn prediction</li>
+                  <li>RFM analysis</li>
+                  <li>Basket analysis</li>
+                </ul>
+              </li>
+            </ul>
+            With our tools, companies can better manage marketing budgets,
+            increase profitability, and build long-term customer relationships.
           </p>
         </motion.div>
       </motion.section>
