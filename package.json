@@ -39,7 +39,7 @@
     "@types/react-dom": "^18",
     "@types/swiper": "^6.0.0",
     "autoprefixer": "^10.4.20",
-    "aws-cdk": "^2",
+    "aws-cdk": "^2.1002.0",
     "aws-cdk-lib": "^2.181.1",
     "constructs": "^10.3.0",
     "esbuild": "^0.25.0",
