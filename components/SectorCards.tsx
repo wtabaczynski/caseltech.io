@@ -36,7 +36,7 @@ const SectorCard = ({
           <h5 className="mb-2 text-xl font-medium leading-tight text-gray-800 dark:text-white">
             {title}
           </h5>
-          <p className="mb-4 text-base text-gray-700 dark:text-gray-300">
+          <p className="mb-4 text-base text-gray-700 dark:text-gray-500">
             {description}
           </p>
         </div>
