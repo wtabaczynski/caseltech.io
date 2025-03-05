@@ -25,7 +25,7 @@ const ProductCard = () => {
           <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
         </a>
       </div>
-      <div className="p-6 text-gray-700 dark:text-white">
+      <div className="p-6 text-gray-700 font-poppins dark:text-white">
         <h5 className="mb-2 text-xl font-medium leading-tight text-gray-800">
           Our Loyalty Program
         </h5>
@@ -35,7 +35,7 @@ const ProductCard = () => {
         <Link
           href="/loyalty"
           type="button"
-          className="inline-block rounded border-2 border-black text-black px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out hover:border-transparent hover:bg-violet-600 hover:text-white focus:bg-violet-600 focus:text-white focus:outline-none focus:ring-0 active:bg-violet-600"
+          className="inline-block rounded border-2 border-black text-black px-6 pb-2 pt-2.5 text-xs font-poppins font-medium uppercase leading-normal transition duration-150 ease-in-out hover:border-transparent hover:bg-violet-600 hover:text-white focus:bg-violet-600 focus:text-white focus:outline-none focus:ring-0 active:bg-violet-600"
           data-twe-ripple-init
           data-twe-ripple-color="light"
         >

@@ -33,15 +33,15 @@ const SectorCard = ({
       </div>
       <div className="p-6 text-gray-700 dark:text-white text-center flex flex-col flex-1 justify-between">
         <div>
-          <h5 className="mb-2 text-xl font-medium leading-tight text-gray-800 dark:text-white">
+          <h5 className="mb-2 text-xl font-medium font-poppins leading-tight text-gray-800 dark:text-white">
             {title}
           </h5>
-          <p className="mb-4 text-base text-gray-700 dark:text-gray-500">
+          <p className="mb-4 text-base font-poppins text-gray-700 dark:text-gray-500">
             {description}
           </p>
         </div>
         <Link href={link}>
-          <button className="mt-4 flex mx-auto items-center justify-center gap-2 rounded border border-black bg-white px-6 py-2 text-black font-medium text-base transition duration-300 ease-in-out hover:bg-orange-500 hover:text-white hover:border-transparent">
+          <button className="mt-4 flex mx-auto items-center justify-center gap-2 rounded border border-black bg-white px-6 py-2 text-black font-medium font-poppins text-base transition duration-300 ease-in-out hover:bg-orange-500 hover:text-white hover:border-transparent">
             Show more
           </button>
         </Link>

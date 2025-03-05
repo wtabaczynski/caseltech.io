@@ -40,18 +40,18 @@ const GMU = () => {
           className="w-full md:w-1/2 text-black"
           variants={textVariants}
         >
-          <h1 className="text-4xl font-bold mb-6">
+          <h1 className="text-4xl font-poppins font-bold mb-6">
             Equitable and Accessible Software for Injury Detection
           </h1>
           <div className="text-lg leading-relaxed text-justify">
-            <p className="font-bold underline">Sector: Healthcare</p>
+            <p className="font-poppins font-bold underline">Sector: Healthcare</p>
             <div className="h-6"></div>
-            <p className="mb-4">
+            <p className="mb-4 font-poppins">
               The Caseltech provides an implementation of an interactive
               database for the Equitable and Accessible Software for Injury
               Detection (EAS-ID) project for George Mason University.
             </p>
-            <p>
+            <p className="font-poppins">
               The project involves building a unique data repository that
               combines images of bruises and other injuries with measurements,
               clinical and demographic information about the victim, and
@@ -63,7 +63,7 @@ const GMU = () => {
             variants={buttonVariants}
           >
             <Link href="https://bruise.gmu.edu/about/">
-              <button className="px-6 py-3 bg-blue-800 text-white font-bold uppercase rounded-md hover:bg-blue-900 transition">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
                 Project website
               </button>
             </Link>

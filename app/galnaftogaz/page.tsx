@@ -40,17 +40,17 @@ const galnaftogaz = () => {
           className="w-full md:w-1/2 text-black text-lg"
           variants={textVariants}
         >
-          <h1 className="text-4xl font-bold mb-6 text-black">
+          <h1 className="text-4xl font-poppins font-bold mb-6 text-black">
             Fraud Detection in Transactional Data of the Fishka Loyalty System.
             Galnaftogaz
           </h1>
 
-          <p className="font-bold underline text-xl mb-2">Sector: Oil & Gas</p>
+          <p className="font-poppins font-bold underline text-xl mb-2">Sector: Oil & Gas</p>
 
           <br />
           <br />
 
-          <p>
+          <p className="font-poppins">
             The 'Fraud Detection in Transactional Data of the Fishka Loyalty
             System' project leverages machine learning algorithms to identify
             anomalies in sales transactions. Loyalty transactions flagged as
@@ -83,7 +83,7 @@ const galnaftogaz = () => {
             variants={buttonVariants}
           >
             <Link href="/#contact-us">
-              <button className="px-6 py-3 bg-blue-800 text-white font-bold uppercase rounded-md hover:bg-blue-900 transition">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
                 Contact Us
               </button>
             </Link>

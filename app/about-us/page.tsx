@@ -12,7 +12,7 @@ const AboutUs = () => {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-indigo-900 text-white p-10">
       {/* Header at the top center */}
-      <h1 className="text-4xl font-bold mb-10 text-center">Who we are</h1>
+      <h1 className="text-4xl font-poppins font-bold mb-10 text-center">Who we are</h1>
       
       <section className="max-w-6xl flex flex-col md:flex-row items-center gap-10">
         {/* Left side with image and button */}
@@ -30,7 +30,7 @@ const AboutUs = () => {
         </motion.div>
         
         {/* Right side with text */}
-        <div className="w-full md:w-1/2 text-white text-lg">
+        <div className="w-full md:w-1/2 text-white font-poppins text-lg">
           <p className="mb-3">
           Our team consists of experienced professionals who have been successfully delivering commercial projects worldwide for years. We have worked with Fortune 500 companies, providing innovative solutions tailored to the dynamically evolving market.
           </p>

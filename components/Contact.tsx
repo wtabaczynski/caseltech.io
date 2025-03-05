@@ -48,7 +48,7 @@ const Contact = () => {
         className="parallax-section max-container padding-container gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-white text-center items-center justify-center pl-6"
       >
         <motion.h1
-          className="text-black text-4xl font-bold text-center mb-10"
+          className="text-black text-4xl font-poppins font-bold text-center mb-10"
           variants={textVariants}
           initial="hidden"
           animate={controlsText}
@@ -119,11 +119,11 @@ const Contact = () => {
             />
 
             <div className="flex flex-col items-center gap-2 mt-6 text-xs text-gray-400">
-              <p className="font-semibold">Caseltech Sp z o.o.</p>
-              <p className="font-semibold">Ul. Św. Filipa 23/4,</p>
-              <p className="font-semibold">31-150 Kraków</p>
-              <p className="font-semibold">+48 797 448 799</p>
-              <p className="font-semibold">info@caseltech.com</p>
+              <p className="font-poppins font-semibold">Caseltech Sp z o.o.</p>
+              <p className="font-poppins font-semibold">Ul. Św. Filipa 23/4,</p>
+              <p className="font-poppins font-semibold">31-150 Kraków</p>
+              <p className="font-poppins font-semibold">+48 797 448 799</p>
+              <p className="font-poppins font-semibold">info@caseltech.com</p>
               <div className="flex gap-4 mt-2"></div>
             </div>
           </motion.div>

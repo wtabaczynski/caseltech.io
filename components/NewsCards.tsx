@@ -67,12 +67,12 @@ const NewsCards = () => {
               <img className="h-full w-full object-cover" src={img} alt="" />
             </div>
             <div className="p-6 bg-white text-gray-700 flex flex-col flex-grow">
-              <h5 className="mb-4 text-xl font-medium leading-tight text-center flex-grow flex items-center justify-center">
+              <h5 className="mb-4 text-xl font-poppins font-medium leading-tight text-center flex-grow flex items-center justify-center">
                 {title}
               </h5>
               <div className="flex justify-center mt-auto">
                 <Link href={link}>
-                  <button className="inline-block rounded border border-black bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-black text-center transition-colors duration-300 hover:bg-indigo-900 hover:text-white hover:border-transparent">
+                  <button className="inline-block rounded border border-black bg-white px-6 py-2 text-xs font-poppins font-medium uppercase leading-normal text-black text-center transition-colors duration-300 hover:bg-indigo-900 hover:text-white hover:border-transparent">
                     {buttonText}
                   </button>
                 </Link>

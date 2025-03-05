@@ -22,7 +22,7 @@ const OfferCard = () => {
           alt="" />
       </div>
       <div className="p-6">
-        <p className="text-base text-black">
+        <p className="text-base font-poppins text-black">
           Analyze data on active campaigns and keep margins at appropriate levels.
         </p>
       </div>

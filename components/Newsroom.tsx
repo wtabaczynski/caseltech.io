@@ -49,7 +49,7 @@ const Newsroom = () => {
         className="parallax-section max-container padding-container flex flex-col items-center gap-20 py-10 pb-32 md:gap-28 lg:py-20 bg-cover bg-center bg-indigo-900"
       >
         <motion.h1
-          className="text-[50px] text-white font-semibold text-center"
+          className="text-[50px] text-white font-semibold font-poppins text-center"
           variants={textVariants}
           initial="hidden"
           animate={controlsText}
@@ -67,7 +67,7 @@ const Newsroom = () => {
           <NewsCards />
         </motion.div>
         <motion.h2
-          className="text-[50px] text-white font-semibold text-center"
+          className="text-[50px] text-white font-semibold font-poppins text-center"
           variants={textVariants}
           initial="hidden"
           animate={controlsText}

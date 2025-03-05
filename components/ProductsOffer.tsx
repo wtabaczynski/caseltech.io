@@ -86,15 +86,15 @@ const ProductsOffer = () => {
             animate={controlsText}
             variants={textVariants}
           >
-            <h1 className="text-[35px] text-white font-semibold">
+            <h1 className="text-[35px] text-white font-poppins font-semibold">
               {" "}
               Our Loyalty
             </h1>
-            <p className="mb-3 text-[20px] text-white ">
+            <p className="mb-3 text-[20px] font-poppins text-white ">
               Boost Sales and Customer Loyalty with an Intelligent Promotion
               Engine!
             </p>
-            <p className="mb-3 text-[20px] text-white ">
+            <p className="mb-3 text-[20px] font-poppins text-white ">
               Want to attract customers, increase engagement, and drive sales?
               Our promotion engine automates and personalizes your loyalty
               campaigns, turning casual shoppers into devoted brand ambassadors!

@@ -58,7 +58,7 @@ const Features = () => {
             animate={controlsText}
             variants={textVariants}
           >
-            <p className="mb-3 text-[20px] text-white">
+            <p className="mb-3 text-[20px] font-poppins text-white">
               Personalized offers – tailored to customer behaviors and preferences.
               Automatic reward calculation – points, discounts, freebies, and cashback without the hassle.  
               Seamless integration – works with your POS, e-commerce, CRM, and mobile apps.

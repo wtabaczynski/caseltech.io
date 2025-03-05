@@ -44,11 +44,11 @@ const Forecasting = () => {
       >
         {/* Lewa strona z tekstem */}
         <motion.div
-          className="w-full md:w-1/2 text-black text-lg md:pl-10"
+          className="w-full md:w-1/2 text-black font-poppins text-lg md:pl-10"
           variants={textVariants}
         >
-          <p className="font-bold underline text-lg">Sector: Retail</p>
-          <div className="h-6"></div>
+          <p className=" font-poppins font-bold underline text-lg">Sector: Retail</p>
+          <div className="font-poppins h-6"></div>
           <p>
             <strong>
               "Data-Driven Insights: Advanced Reporting & Sales Analytics for
@@ -114,7 +114,7 @@ const Forecasting = () => {
           </motion.div>
           <motion.div className="mt-10 flex gap-5" variants={buttonVariants}>
             <Link href="/#contact-us">
-              <button className="px-6 py-3 bg-blue-800 text-white font-bold uppercase rounded-md hover:bg-blue-900 transition">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
                 Contact Us
               </button>
             </Link>

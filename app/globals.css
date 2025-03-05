@@ -9,7 +9,7 @@
 @layer base {
   html,
   body {
-    @apply text-surface bg-white font-sans;
+    @apply text-surface bg-white font-poppins;
   }
   html.dark {
     @apply text-neutral-50 bg-white;

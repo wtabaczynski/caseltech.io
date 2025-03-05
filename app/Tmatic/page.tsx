@@ -30,7 +30,7 @@ const Tmatic = () => {
       animate="visible"
     >
       {/* Nagłówek */}
-      <h1 className="text-4xl font-bold mb-6 text-black text-center">
+      <h1 className="text-4xl font-poppins font-bold mb-6 text-black text-center">
         Audit of the billing system performance and customer settlement process
       </h1>
 
@@ -56,7 +56,7 @@ const Tmatic = () => {
           </motion.div>
           <motion.div className="mt-10 flex gap-5" variants={buttonVariants}>
             <Link href="/#contact-us">
-              <button className="px-6 py-3 bg-blue-800 text-white font-bold uppercase rounded-md hover:bg-blue-900 transition">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
                 Contact Us
               </button>
             </Link>
@@ -68,16 +68,16 @@ const Tmatic = () => {
           className="w-full md:w-1/2 text-black text-lg"
           variants={textVariants}
         >
-          <p className="font-bold underline">Sector: Financial</p>
+          <p className="font-poppins font-bold underline">Sector: Financial</p>
           <div className="h-6"></div>
-          <p>
+          <p className="font-poppins">
             T-Matic Grupa Computer Plus Sp z o.o., together with Caseltech Sp. z
             o.o., is conducting an audit of the billing system for BIK S.A. in
             terms of high system availability and operational processes. The
             audit project covered the following areas:
           </p>
           <ul className="list-disc pl-5">
-            <li>
+            <li className="font-poppins">
               <strong>IT:</strong> including system architecture, technologies
               used in the billing system, integrations with source and
               accounting systems, infrastructure administration, business
@@ -85,16 +85,16 @@ const Tmatic = () => {
               product roadmap execution, and configuration of new products in
               the product catalog.
             </li>
-            <li>
+            <li className="font-poppins">
               <strong>Business:</strong> focusing on processes related to offer
               creation based on contract templates, sales processes.
             </li>
-            <li>
+            <li className="font-poppins">
               <strong>Operational:</strong> including invoicing management and
               calculation of settlements for non-standard services.
             </li>
           </ul>
-          <p>
+          <p className="font-poppins">
             As a result of the audit, the auditors were expected to present a
             report with recommendations for changes whenever a reviewed area
             required improvement.

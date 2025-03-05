@@ -69,7 +69,7 @@ const Products = () => {
       >
         <div className="pl-10 md:pl-20 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[650px]">
           <motion.h1
-            className="text-[40px] text-black font-sans font-medium leading-snug"
+            className="text-[40px] text-black font-poppins font-medium leading-snug"
             variants={textVariants}
             initial="hidden"
             animate={controlsText}
