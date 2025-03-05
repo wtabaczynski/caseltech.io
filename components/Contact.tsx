@@ -118,7 +118,7 @@ const Contact = () => {
               height={400}
             />
 
-            <div className="flex flex-col items-center gap-2 mt-6 text-xs text-gray-400">
+            <div className="flex flex-col items-center  gap-2 mt-6 text-lg text-gray-400">
               <p className="font-poppins font-semibold">Caseltech Sp z o.o.</p>
               <p className="font-poppins font-semibold">Ul. Św. Filipa 23/4,</p>
               <p className="font-poppins font-semibold">31-150 Kraków</p>

@@ -42,7 +42,7 @@ const NewsCards = () => {
         {
           img: "/Skyspark.webp",
           title:
-            "SkySpark environment with the Energy Twin extension for smart buildings - Naurotermika Spzoo.",
+            "SkySpark environment with the Energy Twin extension for the industry - Naurotermika Spzoo.",
           link: "/skyspark",
           buttonText: "Show more",
         },

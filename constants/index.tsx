@@ -46,7 +46,7 @@ export const sectorsData = [
   },
   {
     title: "Industry",
-    description: "Advanced solutions for smart buildings and industry.",
+    description: "Advanced solutions for the industry.",
     image: "/industry.jpeg",
     link: "/skyspark",
     isMiddle: false, // Karta po bokach

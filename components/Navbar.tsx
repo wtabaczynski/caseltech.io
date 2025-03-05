@@ -7,7 +7,7 @@ const NavLinks = [
   { name: "Home", link: "/#intro" },
   { name: "About us", link: "/about-us" },
   { name: "Loyalty", link: "/loyalty" },
-  { name: "Customer succes stories", link: "/#newsroom" },
+  { name: "Case studies", link: "/#newsroom" },
   { name: "Contact us", link: "/#contact-us" },
 ];
 
