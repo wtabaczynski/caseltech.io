@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef } from "react";
-import { sendEmail } from "@/actions/sendEmail";
+
+import React, { useRef, useState } from "react";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import Link from "next/link";
@@ -24,12 +24,10 @@ const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const controlsText = useAnimation();
   const controlsForm = useAnimation();
-  const { ref: textRef, inView: textInView } = useInView({
-    triggerOnce: false,
-  });
-  const { ref: formRefInView, inView: formInView } = useInView({
-    triggerOnce: false,
-  });
+  const { ref: textRef, inView: textInView } = useInView({ triggerOnce: false });
+  const { ref: formRefInView, inView: formInView } = useInView({ triggerOnce: false });
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (textInView) controlsText.start("visible");
@@ -40,6 +38,40 @@ const Contact = () => {
     if (formInView) controlsForm.start("visible");
     else controlsForm.start("hidden");
   }, [formInView, controlsForm]);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          senderName: formData.get("senderName"),
+          senderEmail: formData.get("senderEmail"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Email has been sent successfully!");
+        formRef.current?.reset();
+      } else {
+        toast.error(result.error || "Something went wrong.");
+      }
+    } catch (err) {
+      toast.error("Failed to send message.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <ScrollReveal>
@@ -64,19 +96,7 @@ const Contact = () => {
             animate={controlsForm}
             ref={formRefInView}
           >
-            <form
-              ref={formRef}
-              className="flex flex-col dark:text-black gap-5"
-              action={async (formData) => {
-                const { data, error } = await sendEmail(formData);
-                if (error) {
-                  toast.error(error);
-                  return;
-                }
-                toast.success("Email has been sent successfully!");
-                if (formRef.current) formRef.current.reset();
-              }}
-            >
+            <form ref={formRef} className="flex flex-col dark:text-black gap-5" onSubmit={handleSubmit}>
               <input
                 className="h-14 px-4 rounded-lg border border-gray-600 dark:bg-white dark:bg-opacity-80 transition-all text-black"
                 name="senderEmail"
@@ -117,14 +137,12 @@ const Contact = () => {
               width={400}
               height={400}
             />
-
             <div className="flex flex-col items-center  gap-2 mt-6 text-lg text-gray-400">
               <p className="font-poppins font-semibold">Caseltech Sp z o.o.</p>
               <p className="font-poppins font-semibold">Ul. Św. Filipa 23/4,</p>
               <p className="font-poppins font-semibold">31-150 Kraków</p>
               <p className="font-poppins font-semibold">+48 797 448 799</p>
               <p className="font-poppins font-semibold">info@caseltech.com</p>
-              <div className="flex gap-4 mt-2"></div>
             </div>
           </motion.div>
         </div>
