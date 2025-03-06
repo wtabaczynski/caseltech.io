@@ -3,7 +3,10 @@ import { Resend } from "resend";
 import ContactFormEmail from "@/email/contact-form-email";
 import { validateString, getErrorMessage } from "@/lib/utils";
 
+// const resend = new Resend(process.env.RESEND_API_KEY);
+// const resendApiKey = process.env.NEXT_PUBLIC_RESEND_API_KEY;
 const resend = new Resend(process.env.RESEND_API_KEY);
+console.log("Resend API Key:", resend);
 
 export async function POST(req: Request) {
   try {
