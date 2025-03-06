@@ -69,8 +69,11 @@ const Contact = () => {
       }
 
       toast.success("Email has been sent successfully!");
+      console.log("Email has been sent successfully!");
+
       formRef.current?.reset();
     } catch (error) {
+      console.log("Failed to send message.");
       toast.error(
         error instanceof Error ? error.message : "Failed to send message."
       );
