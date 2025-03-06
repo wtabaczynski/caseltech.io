@@ -22,7 +22,7 @@ const buttonVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
 };
 
-const Forecasting = () => {
+const Logistic = () => {
   return (
     <motion.main
       className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-10"
@@ -49,8 +49,7 @@ const Forecasting = () => {
         >
           <p>
             <strong>
-              "Data-Driven Insights: Advanced Reporting & Sales Analytics for
-              Business Growth"
+              "Project for Optimizing Assortment Allocation in 4F Stores"
             </strong>
           </p>
           <p className=" font-poppins font-bold underline text-lg">
@@ -58,29 +57,25 @@ const Forecasting = () => {
           </p>
           <div className="font-poppins h-6"></div>
           <p>
-            We develop automated reporting systems and customer behavior
-            analysis tools to support strategic decisions. By integrating data
-            from cloud platforms (Google Cloud, AWS, Azure, Microsoft DWH), we
-            provide insights into sales, marketing effectiveness, and customer
-            loyalty.
+            The project involved designing and implementing algorithms for the
+            automatic allocation of goods for initial distribution and
+            replenishment, taking into account:
           </p>
 
           <ul className="list-disc pl-5">
-            <p> Our solutions include: </p>
-            <li>Sales forecasting with trend and seasonality analysis.</li>
-            <li>Demand prediction and inventory optimization.</li>
+            <li>Store segmentation into clusters (e.g., by size, location).</li>
+            <li>Available size range of the given assortment.</li>
+            <li>Sales history and performance of individual locations.</li>
+            <li>Planned openings of new stores.</li>
             <li>
-              Marketing performance analysis to identify high-value campaigns.
-            </li>
-            <li>Cost efficiency insights for maximizing ROI.</li>
-            <li>
-              Customer behavior analytics (retention, churn, rfm, basket
-              analysis).
+              The ability for manual allocation adjustments by the allocation
+              manager.
             </li>
           </ul>
           <p>
-            Our solution help businesses optimize budgets, boost profitability,
-            and build long-term customer relationships.
+            Thanks to the implemented solutions, assortment distribution was
+            optimized, product availability improved, and sales efficiency
+            increased.
           </p>
         </motion.div>
         {/* Prawa strona z obrazkiem oraz przyciskami */}
@@ -110,4 +105,4 @@ const Forecasting = () => {
   );
 };
 
-export default Forecasting;
+export default Logistic;

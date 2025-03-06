@@ -26,6 +26,12 @@ const NewsCards = () => {
           buttonText: "Show more",
         },
         {
+          img: "/otcf1.jpeg",
+          title: "Automated Stocking of Assortment in Physical Stores",
+          link: "/logistic",
+          buttonText: "Show more",
+        },
+        {
           img: "/Galnaftogaz.jpg",
           title:
             "Fraud detection in the transaction data of the loyalty system - Galnaftogaz.",
