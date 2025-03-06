@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import SubmitBtn from "./submit-btn";
+import SubmitBtn from "./submit-btn"; // ✅ Import poprawiony
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
@@ -41,9 +41,14 @@ const Contact = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (loading) return; // Zapobiega wielokrotnemu kliknięciu
     setLoading(true);
 
+    // Pobieramy wartości pól z formularza
     const formData = new FormData(event.currentTarget);
+    const senderName = formData.get("senderName") as string;
+    const senderEmail = formData.get("senderEmail") as string;
+    const message = formData.get("message") as string;
 
     try {
       const response = await fetch("/api/sendEmail", {
@@ -51,23 +56,18 @@ const Contact = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          senderName: formData.get("senderName"),
-          senderEmail: formData.get("senderEmail"),
-          message: formData.get("message"),
-        }),
+        body: JSON.stringify({ senderName, senderEmail, message }),
       });
 
-      const result = await response.json();
-
-      if (response.ok) {
-        toast.success("Email has been sent successfully!");
-        formRef.current?.reset();
-      } else {
-        toast.error(result.error || "Something went wrong.");
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || "Something went wrong.");
       }
-    } catch (err) {
-      toast.error("Failed to send message.");
+
+      toast.success("Email has been sent successfully!");
+      formRef.current?.reset();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to send message.");
     } finally {
       setLoading(false);
     }
@@ -111,12 +111,11 @@ const Contact = () => {
               />
               <textarea
                 className="h-52 my-3 rounded-lg border border-gray-600 p-4 dark:bg-white dark:bg-opacity-80 transition-all text-black"
-                style={{ color: "#000000" }}
                 name="message"
                 required
                 placeholder="Message"
               />
-              <SubmitBtn className="ml-6 bg-indigo-800 hover:bg-indigo-900" />
+              <SubmitBtn className="ml-6 bg-indigo-800 hover:bg-indigo-900" disabled={loading} />
               <p className="mt-4 text-xs text-gray-400">
                 By clicking the 'Send message' button you consent to processing
                 your data and contacting you to fulfill your request according
@@ -137,7 +136,7 @@ const Contact = () => {
               width={400}
               height={400}
             />
-            <div className="flex flex-col items-center  gap-2 mt-6 text-lg text-gray-400">
+            <div className="flex flex-col items-center gap-2 mt-6 text-lg text-gray-400">
               <p className="font-poppins font-semibold">Caseltech Sp z o.o.</p>
               <p className="font-poppins font-semibold">Ul. Św. Filipa 23/4,</p>
               <p className="font-poppins font-semibold">31-150 Kraków</p>

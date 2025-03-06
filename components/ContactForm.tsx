@@ -55,46 +55,13 @@ const ContactForm = () => {
       {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="senderEmail" className="block text-sm font-medium text-gray-700">
-            Your Email
-          </label>
-          <input
-            type="email"
-            name="senderEmail"
-            id="senderEmail"
-            required
-            value={formData.senderEmail}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border rounded-md"
-          />
+          <input type="email" name="senderEmail" placeholder="Your e-mail address" required className="input-field" value={formData.senderEmail} onChange={handleChange} />
         </div>
         <div>
-          <label htmlFor="senderName" className="block text-sm font-medium text-gray-700">
-            Your Name
-          </label>
-          <input
-            type="text"
-            name="senderName"
-            id="senderName"
-            required
-            value={formData.senderName}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border rounded-md"
-          />
+          <input type="text" name="senderName" placeholder="Your name" required className="input-field" value={formData.senderName} onChange={handleChange} />
         </div>
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-            Message
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            required
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border rounded-md"
-          />
+          <textarea name="message" placeholder="Message" required className="input-field" value={formData.message} onChange={handleChange} />
         </div>
         <SubmitBtn className="w-full" />
       </form>
