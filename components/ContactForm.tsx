@@ -14,7 +14,9 @@ const ContactForm = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -25,7 +27,7 @@ const ContactForm = () => {
     setSuccess(false);
 
     try {
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -55,13 +57,36 @@ const ContactForm = () => {
       {error && <p className="text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <input type="email" name="senderEmail" placeholder="Your e-mail address" required className="input-field" value={formData.senderEmail} onChange={handleChange} />
+          <input
+            type="email"
+            name="senderEmail"
+            placeholder="Your e-mail address"
+            required
+            className="input-field"
+            value={formData.senderEmail}
+            onChange={handleChange}
+          />
         </div>
         <div>
-          <input type="text" name="senderName" placeholder="Your name" required className="input-field" value={formData.senderName} onChange={handleChange} />
+          <input
+            type="text"
+            name="senderName"
+            placeholder="Your name"
+            required
+            className="input-field"
+            value={formData.senderName}
+            onChange={handleChange}
+          />
         </div>
         <div>
-          <textarea name="message" placeholder="Message" required className="input-field" value={formData.message} onChange={handleChange} />
+          <textarea
+            name="message"
+            placeholder="Message"
+            required
+            className="input-field"
+            value={formData.message}
+            onChange={handleChange}
+          />
         </div>
         <SubmitBtn className="w-full" />
       </form>
