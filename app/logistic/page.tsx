@@ -29,13 +29,6 @@ const Logistic = () => {
       initial="hidden"
       animate="visible"
     >
-      <motion.h1
-        className="text-4xl font-bold mb-6 text-black text-center"
-        variants={textVariants}
-      >
-        {/* "Data-Driven Insights: Advanced Reporting & Sales Analytics for Business Growth" */}
-      </motion.h1>
-
       <motion.section
         className="max-w-6xl flex flex-col md:flex-row items-start gap-10"
         initial="hidden"
@@ -47,22 +40,18 @@ const Logistic = () => {
           className="w-full md:w-1/2 text-black font-poppins text-lg md:pl-10"
           variants={textVariants}
         >
-          <p>
-            <strong>
-              "Project for Optimizing Assortment Allocation in 4F Stores"
-            </strong>
+          <p className="text-2xl font-bold">
+            Project for Optimizing Assortment Allocation in 4F Stores
           </p>
-          <p className=" font-poppins font-bold underline text-lg">
-            Sector: Retail
-          </p>
-          <div className="font-poppins h-6"></div>
+          <div className="h-8"></div>
+          <p className="text-lg font-bold underline">Sector: Retail</p>
+          <div className="h-8"></div>
           <p>
             The project involved designing and implementing algorithms for the
             automatic allocation of goods for initial distribution and
             replenishment, taking into account:
           </p>
-
-          <ul className="list-disc pl-5">
+          <ul className="list-disc pl-5 mt-4">
             <li>Store segmentation into clusters (e.g., by size, location).</li>
             <li>Available size range of the given assortment.</li>
             <li>Sales history and performance of individual locations.</li>
@@ -72,27 +61,28 @@ const Logistic = () => {
               manager.
             </li>
           </ul>
-          <p>
+          <p className="mt-4">
             Thanks to the implemented solutions, assortment distribution was
             optimized, product availability improved, and sales efficiency
             increased.
           </p>
         </motion.div>
-        {/* Prawa strona z obrazkiem oraz przyciskami */}
+
+        {/* Prawa strona z obrazkiem oraz przyciskiem */}
         <motion.div
-          className="flex flex-col items-center md:items-start w-full md:w-1/2"
+          className="flex flex-col items-center w-full md:w-1/2"
           variants={textVariants}
         >
           <motion.div variants={imageVariants}>
             <Image
-              src="/otcf.jpeg"
+              src="/4f2.jpeg"
               alt="forecasting"
               width={600}
               height={350}
               className="rounded-lg"
             />
           </motion.div>
-          <motion.div className="mt-10 flex gap-5" variants={buttonVariants}>
+          <motion.div className="mt-10 flex justify-center w-full" variants={buttonVariants}>
             <Link href="/#contact-us">
               <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
                 Contact Us

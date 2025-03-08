@@ -18,7 +18,7 @@ const newsData = [
     buttonText: "Show more",
   },
   {
-    img: "/otcf1.jpeg",
+    img: "/4f1.jpeg",
     title: "Automated Stocking of Assortment in Physical Stores with 4F",
     link: "/logistic",
     buttonText: "Show more",

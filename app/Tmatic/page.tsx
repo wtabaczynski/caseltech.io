@@ -18,8 +18,8 @@ const imageVariants = {
 };
 
 const buttonVariants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
 const Tmatic = () => {
@@ -29,20 +29,15 @@ const Tmatic = () => {
       initial="hidden"
       animate="visible"
     >
-      {/* Nagłówek */}
-      <h1 className="text-4xl font-poppins font-bold mb-6 text-black text-center">
-        Audit of the billing system performance and customer settlement process
-      </h1>
-
       <motion.section
-        className="max-w-6xl flex flex-col md:flex-row items-center gap-10"
+        className="max-w-6xl flex flex-col md:flex-row items-start gap-10"
         initial="hidden"
         animate="visible"
         variants={textVariants}
       >
-        {/* Lewa strona z obrazkiem oraz przyciskami */}
+        {/* Lewa strona z obrazkiem */}
         <motion.div
-          className="flex flex-col items-center md:items-start w-full md:w-1/2"
+          className="flex flex-col items-center w-full md:w-1/2"
           variants={textVariants}
         >
           <motion.div variants={imageVariants}>
@@ -54,7 +49,7 @@ const Tmatic = () => {
               className="rounded-lg"
             />
           </motion.div>
-          <motion.div className="mt-10 flex gap-5" variants={buttonVariants}>
+          <motion.div className="mt-6 flex justify-center" variants={buttonVariants}>
             <Link href="/#contact-us">
               <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
                 Contact Us
@@ -65,17 +60,23 @@ const Tmatic = () => {
 
         {/* Prawa strona z tekstem */}
         <motion.div
-          className="w-full md:w-1/2 text-black text-lg"
+          className="w-full md:w-1/2 text-black text-lg flex flex-col"
           variants={textVariants}
         >
-          <p className="font-poppins font-bold underline">Sector: Financial</p>
-          <div className="h-6"></div>
+          <h2 className="font-poppins font-bold underline">Audit of the billing system performance and customer settlement process</h2>
+          <div className="h-10"></div> {/* Odstęp dwóch wierszy */}
+          
+          <h3 className="font-poppins font-bold">Sector: Financial</h3>
+          <div className="h-10"></div> {/* Odstęp dwóch wierszy */}
+          
           <p className="font-poppins">
             T-Matic Grupa Computer Plus Sp z o.o., together with Caseltech Sp. z
             o.o., is conducting an audit of the billing system for BIK S.A. in
             terms of high system availability and operational processes. The
             audit project covered the following areas:
           </p>
+          <div className="h-10"></div> {/* Odstęp dwóch wierszy */}
+          
           <ul className="list-disc pl-5">
             <li className="font-poppins">
               <strong>IT:</strong> including system architecture, technologies
@@ -85,19 +86,21 @@ const Tmatic = () => {
               product roadmap execution, and configuration of new products in
               the product catalog.
             </li>
+            <div className="h-10"></div> {/* Odstęp dwóch wierszy */}
             <li className="font-poppins">
               <strong>Business:</strong> focusing on processes related to offer
               creation based on contract templates, sales processes.
             </li>
+            <div className="h-10"></div> {/* Odstęp dwóch wierszy */}
             <li className="font-poppins">
               <strong>Operational:</strong> including invoicing management and
               calculation of settlements for non-standard services.
             </li>
           </ul>
+          <div className="h-10"></div> {/* Odstęp dwóch wierszy */}
+          
           <p className="font-poppins">
-            As a result of the audit, the auditors were expected to present a
-            report with recommendations for changes whenever a reviewed area
-            required improvement.
+            The auditors presented a report with recommendations for improvements in case issues were identified.
           </p>
         </motion.div>
       </motion.section>
