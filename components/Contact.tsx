@@ -24,8 +24,12 @@ const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const controlsText = useAnimation();
   const controlsForm = useAnimation();
-  const { ref: textRef, inView: textInView } = useInView({ triggerOnce: false });
-  const { ref: formRefInView, inView: formInView } = useInView({ triggerOnce: false });
+  const { ref: textRef, inView: textInView } = useInView({
+    triggerOnce: false,
+  });
+  const { ref: formRefInView, inView: formInView } = useInView({
+    triggerOnce: false,
+  });
 
   const [loading, setLoading] = useState(false);
 
@@ -51,7 +55,7 @@ const Contact = () => {
     const message = formData.get("message") as string;
 
     try {
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,9 +69,14 @@ const Contact = () => {
       }
 
       toast.success("Email has been sent successfully!");
+      console.log("Email has been sent successfully!");
+
       formRef.current?.reset();
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Failed to send message.");
+      console.log("Failed to send message.");
+      toast.error(
+        error instanceof Error ? error.message : "Failed to send message."
+      );
     } finally {
       setLoading(false);
     }
@@ -96,7 +105,11 @@ const Contact = () => {
             animate={controlsForm}
             ref={formRefInView}
           >
-            <form ref={formRef} className="flex flex-col dark:text-black gap-5" onSubmit={handleSubmit}>
+            <form
+              ref={formRef}
+              className="flex flex-col dark:text-black gap-5"
+              onSubmit={handleSubmit}
+            >
               <input
                 className="h-14 px-4 rounded-lg border border-gray-600 dark:bg-white dark:bg-opacity-80 transition-all text-black"
                 name="senderEmail"
@@ -115,7 +128,10 @@ const Contact = () => {
                 required
                 placeholder="Message"
               />
-              <SubmitBtn className="ml-6 bg-indigo-800 hover:bg-indigo-900" disabled={loading} />
+              <SubmitBtn
+                className="ml-6 bg-indigo-800 hover:bg-indigo-900"
+                disabled={loading}
+              />
               <p className="mt-4 text-xs text-gray-400">
                 By clicking the 'Send message' button you consent to processing
                 your data and contacting you to fulfill your request according
