@@ -4,16 +4,20 @@ import ContactFormEmail from "@/email/contact-form-email";
 import { validateString, getErrorMessage } from "@/lib/utils";
 
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
-  if (!process.env.RESEND_API_KEY) {
-    return Response.json({ error: "Missing RESEND_API_KEY" }, { status: 500 });
-  }
-  console.log(
-    "RESEND_API_KEY:",
-    process.env.RESEND_API_KEY ? "ZNALEZIONY" : "NIE ZNALEZIONY"
-  );
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    if (!process.env.RESEND_API_KEY) {
+      return Response.json(
+        { error: "Missing RESEND_API_KEY" },
+        { status: 500 }
+      );
+    }
+    console.log(
+      "RESEND_API_KEY:",
+      process.env.RESEND_API_KEY ? "ZNALEZIONY" : "NIE ZNALEZIONY"
+    );
+
     // Pobieramy surowy tekst requesta
     const bodyText = await req.text();
     console.log("RAW REQUEST BODY:", bodyText); // 🔍 Log surowych danych
