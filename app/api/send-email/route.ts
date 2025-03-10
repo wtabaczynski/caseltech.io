@@ -2,31 +2,67 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import ContactFormEmail from "@/email/contact-form-email";
 import { validateString, getErrorMessage } from "@/lib/utils";
+import {
+  SecretsManagerClient,
+  GetSecretValueCommand,
+} from "@aws-sdk/client-secrets-manager";
+
+const secret_name = "prod/app/website";
+
+const client = new SecretsManagerClient({
+  region: process.env.AWS_REGION || "eu-west-1",
+  credentials: process.env.AWS_ACCESS_KEY_ID
+    ? {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
+      }
+    : undefined,
+});
+
+// Funkcja asynchroniczna do pobierania sekretu z AWS Secrets Manager
+async function getResendApiKey() {
+  try {
+    const response = await client.send(
+      new GetSecretValueCommand({
+        SecretId: secret_name,
+        VersionStage: "AWSCURRENT",
+      })
+    );
+
+    if (!response.SecretString) {
+      throw new Error("No secret value found");
+    }
+
+    // Parsowanie sekretu jako JSON
+    const secretData = JSON.parse(response.SecretString);
+    console.log("API Key retrieved:", secretData.RESEND_API_KEY);
+
+    return secretData.RESEND_API_KEY;
+  } catch (error) {
+    console.error("Error fetching secret from AWS:", error);
+    return null;
+  }
+}
 
 export async function POST(req: Request) {
   try {
-    const resend = new Resend(process.env.REACT_APP_RESEND_API_KEY);
-
-    if (!process.env.REACT_APP_RESEND_API_KEY) {
-      return Response.json(
-        { error: "Missing REACT_APP_RESEND_API_KEY" },
-        { status: 500 }
-      );
+    const apiKey = await getResendApiKey();
+    if (!apiKey) {
+      return NextResponse.json({ error: "Missing API Key" }, { status: 500 });
     }
-    console.log(
-      "REACT_APP_RESEND_API_KEY:",
-      process.env.REACT_APP_RESEND_API_KEY ? "ZNALEZIONY" : "NIE ZNALEZIONY"
-    );
+
+    console.log("API Key retrieved:", apiKey);
+
+    const resend = new Resend(apiKey);
 
     // Pobieramy surowy tekst requesta
     const bodyText = await req.text();
-    console.log("RAW REQUEST BODY:", bodyText); // 🔍 Log surowych danych
+    console.log("RAW REQUEST BODY:", bodyText);
 
-    // Parsujemy JSON ręcznie, aby uniknąć problemów w AWS
+    // Parsowanie JSON
     const formData = JSON.parse(bodyText);
-    console.log("PARSED FORM DATA:", formData); // 🔍 Log sparsowanych danych
+    console.log("PARSED FORM DATA:", formData);
 
-    // Sprawdzamy, czy wszystkie wymagane dane są obecne
     if (
       !formData ||
       !formData.senderEmail ||
