@@ -5,17 +5,17 @@ import { validateString, getErrorMessage } from "@/lib/utils";
 
 export async function POST(req: Request) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(process.env.REACT_APP_RESEND_API_KEY);
 
-    if (!process.env.RESEND_API_KEY) {
+    if (!process.env.REACT_APP_RESEND_API_KEY) {
       return Response.json(
-        { error: "Missing RESEND_API_KEY" },
+        { error: "Missing REACT_APP_RESEND_API_KEY" },
         { status: 500 }
       );
     }
     console.log(
-      "RESEND_API_KEY:",
-      process.env.RESEND_API_KEY ? "ZNALEZIONY" : "NIE ZNALEZIONY"
+      "REACT_APP_RESEND_API_KEY:",
+      process.env.REACT_APP_RESEND_API_KEY ? "ZNALEZIONY" : "NIE ZNALEZIONY"
     );
 
     // Pobieramy surowy tekst requesta
