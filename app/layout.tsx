@@ -23,6 +23,15 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="268031a5-99a2-4c10-abbe-2f4e2ac1c010"
+          data-blockingmode="auto"
+          type="text/javascript"
+        ></script>
+      </head>
       <body className="bg-white font-sans">
         <Navbar />
         <AnimatePresence mode="wait">
