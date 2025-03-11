@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SubmitBtn from "@/components/submit-btn";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -39,7 +41,11 @@ const ContactForm = () => {
 
       if (response.ok) {
         setSuccess(true);
+        setShowSuccessAnimation(true);
         setFormData({ senderName: "", senderEmail: "", message: "" });
+
+        // Ukryj animację po 3 sekundach
+        setTimeout(() => setShowSuccessAnimation(false), 5000);
       } else {
         setError(result.error || "Something went wrong.");
       }
@@ -51,10 +57,11 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-6 shadow-md rounded-lg">
+    <div className="max-w-lg mx-auto bg-white p-6 shadow-md rounded-lg relative">
       <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Us</h2>
-      {success && <p className="text-green-500">Email sent successfully!</p>}
+
       {error && <p className="text-red-500">{error}</p>}
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <input
@@ -90,6 +97,19 @@ const ContactForm = () => {
         </div>
         <SubmitBtn className="w-full" />
       </form>
+
+      {/* Animacja sukcesu */}
+      {showSuccessAnimation && (
+        <motion.div
+          className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-green-500 text-white text-lg font-semibold rounded-lg"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.5 }}
+        >
+          ✅ Email sent successfully!
+        </motion.div>
+      )}
     </div>
   );
 };
