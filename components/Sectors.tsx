@@ -35,18 +35,20 @@ const Sectors = () => {
   return (
     <motion.div
       ref={ref}
-      className="w-full py-8 bg-orange-500"
+      className="w-full py-8 bg-gradient-to-br from-orange-500 to-red-400"
       variants={containerVariants}
       initial="hidden"
       animate={controls}
     >
       <div className="max-w-6xl mx-auto">
+        <div className="h-10"></div>
         <motion.h2
-          className="text-2xl font-bold text-center text-white dark:text-white mb-6"
+          className="text-[40px] text-white font-poppins font-semibold text-center"
           variants={cardVariants}
         >
-          Our Sectors
+          We have delivered solutions in the following sectors:
         </motion.h2>
+          <div className="h-10"></div>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={containerVariants}

@@ -54,10 +54,10 @@ const Newsroom = () => {
     <ScrollReveal>
       <section
         id="newsroom"
-        className="max-container padding-container flex flex-col items-center gap-10 py-10 pb-32 bg-indigo-900 relative"
+        className="max-container padding-container flex flex-col items-center gap-10 py-10 pb-32 bg-gradient-to-br from-indigo-900 to-blue-500 relative"
       >
-        <h1 className="text-[50px] text-white font-semibold text-center">
-          Customer success stories
+        <h1 className="text-[50px] text-white font-semibold font-poppins text-center">
+        Check out the latest Caseltech  projects realizations
         </h1>
 
         {/* Karuzela Swiper */}
@@ -88,9 +88,7 @@ const Newsroom = () => {
           </div>
         </div>
 
-        <h2 className="text-[50px] text-white font-semibold text-center">
-          Check out the latest news about Caseltech and project realizations
-        </h2>
+        
       </section>
     </ScrollReveal>
   );

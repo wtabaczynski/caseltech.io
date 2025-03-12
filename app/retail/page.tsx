@@ -40,7 +40,7 @@ const Retail = () => {
         >
 
         <div className="h-10"></div>
-        <h1 className="text-[50px] text-white font-semibold text-center">
+        <h1 className="text-[50px] text-white font-poppins font-semibold text-center">
           Check out our projects for retail sector
         </h1>
 
