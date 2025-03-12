@@ -39,7 +39,7 @@ const ProductCard = () => {
           data-twe-ripple-init
           data-twe-ripple-color="light"
         >
-          Explore
+          About our Loyalty
         </Link>
       </div>
     </div>
