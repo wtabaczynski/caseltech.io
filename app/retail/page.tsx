@@ -36,7 +36,7 @@ const Retail = () => {
     <ScrollReveal>
         <section
             id="retail"
-            className="max-container padding-container flex flex-col items-center gap-10 py-10 pb-32 bg-gradient-to-br from-indigo-700 to-white relative"
+            className="max-container padding-container flex flex-col items-center gap-10 py-10 pb-32 bg-gradient-to-br from-indigo-900 to-blue-500 relative"
         >
 
         <div className="h-10"></div>

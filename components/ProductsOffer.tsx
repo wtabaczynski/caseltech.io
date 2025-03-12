@@ -57,7 +57,7 @@ const ProductsOffer = () => {
   return (
     <section
       id="product-offer"
-      className="parallax-section max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-gray-900"
+      className="parallax-section max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-white"
     >
       <div className="flex flex-row w-screen h-screen">
         <div className="flex items-center justify-start w-1/2 h-full">
@@ -86,15 +86,15 @@ const ProductsOffer = () => {
             animate={controlsText}
             variants={textVariants}
           >
-            <h1 className="text-[35px] text-white font-poppins font-semibold">
+            <h1 className="text-[40px] text-gray-600 font-poppins font-semibold">
               {" "}
               Our Loyalty
             </h1>
-            <p className="mb-3 text-[20px] font-poppins text-white ">
+            <p className="mb-3 text-[30px] font-poppins font-medium text-gray-600 ">
               Boost Sales and Customer Loyalty with an Intelligent Promotion
               Engine!
             </p>
-            <p className="mb-3 text-[20px] font-poppins text-white ">
+            <p className="mb-3 text-[30px] font-poppins font-medium text-gray-600 ">
               Want to attract customers, increase engagement, and drive sales?
               Our promotion engine automates and personalizes your loyalty
               campaigns, turning casual shoppers into devoted brand ambassadors!

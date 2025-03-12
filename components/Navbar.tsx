@@ -60,7 +60,7 @@ const Navbar = () => {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: "0%" }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 w-full h-screen bg-gray-900 text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
+            className="fixed top-0 left-0 w-full h-screen bg-gray-700 text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
           >
             {NavLinks.map((link) => (
               <motion.div

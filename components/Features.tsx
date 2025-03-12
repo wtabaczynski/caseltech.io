@@ -46,7 +46,7 @@ const Features = () => {
   return (
     <section
       id="features"
-      className="parallax-section max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-gray-900"
+      className="parallax-section max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-indigo-700"
     >
       <div className="flex flex-row w-screen h-screen">
         {/* Text Section */}
@@ -58,7 +58,7 @@ const Features = () => {
             animate={controlsText}
             variants={textVariants}
           >
-            <p className="mb-3 text-[20px] font-poppins text-white">
+            <p className="mb-3 text-[30px] font-poppins font-medium text-white">
               Personalized offers – tailored to customer behaviors and preferences.
               Automatic reward calculation – points, discounts, freebies, and cashback without the hassle.  
               Seamless integration – works with your POS, e-commerce, CRM, and mobile apps.
@@ -67,7 +67,7 @@ const Features = () => {
               Contact us today to see how we can help your brand grow!
             </p>
             <Link href="/#contact-us">
-              <button className="inline-block rounded border border-black bg-amber-500 px-6 py-2 text-xs font-medium uppercase leading-normal text-white text-center transition-colors duration-300 hover:bg-amber-500 hover:text-white hover:border-transparent">
+              <button className="inline-block rounded border border-black bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-black text-center transition-colors duration-300 hover:bg-orange-500 hover:text-white hover:border-transparent">
                 Contact Us
               </button>
             </Link>

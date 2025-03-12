@@ -35,7 +35,7 @@ const CircularButton = () => {
           </defs>
           <text fontSize="16" fill="currentColor" className="text-violet-600">
             <textPath href="#circlePath" textLength="500">
-              CHECK OUT OUR OFFER • CHECK OUT OUR OFFER • CHECK OUT OUR OFFER •
+              OUR LOYALTY • OUR LOYALTY • OUR LOYALTY •
             </textPath>
           </text>
         </svg>

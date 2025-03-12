@@ -89,7 +89,7 @@ const Contact = () => {
         className="parallax-section max-container padding-container gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-white text-center items-center justify-center pl-6"
       >
         <motion.h1
-          className="text-black text-4xl font-poppins font-bold text-center mb-10"
+          className="text-gray-600 text-4xl font-poppins font-bold text-center mb-10"
           variants={textVariants}
           initial="hidden"
           animate={controlsText}
