@@ -6,7 +6,7 @@ const NewsCards = ({ img, title, link, buttonText }: { img: string, title: strin
   return (
     <motion.div
       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-      className="flex justify-center w-full max-w-[400px]"
+      className="flex justify-center w-full max-w-[400px] border border-gray-500"
     >
       <div className="flex flex-col rounded-2xl bg-white shadow-secondary-1 w-full max-w-[400px]">
         {/* Obrazek – teraz większy */}

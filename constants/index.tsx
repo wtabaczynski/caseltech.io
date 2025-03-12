@@ -41,7 +41,7 @@ export const sectorsData = [
     title: "Retail",
     description: "Enhancing customer experience in retail.",
     image: "/retail.jpeg",
-    link: "/forecasting",
+    link: "/retail",
     isMiddle: false, // Środkowa karta
   },
   {

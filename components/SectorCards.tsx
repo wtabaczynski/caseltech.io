@@ -20,7 +20,7 @@ const SectorCard = ({
 }: SectorCardProps) => {
   return (
     <div
-      className={`block rounded-2xl bg-white shadow-secondary-1 dark:bg-surface-dark ${
+      className={`block rounded-2xl  bg-white shadow-secondary-1 dark:bg-surface-dark ${
         isMiddle ? "w-70 h-96" : "w-70 h-126"
       } flex flex-col`}
     >
