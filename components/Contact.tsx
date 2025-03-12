@@ -136,9 +136,10 @@ const Contact = () => {
                 By clicking the 'Send message' button you consent to processing
                 your data and contacting you to fulfill your request according
                 to our{" "}
-                <Link href="/privacy-policy" className="underline">
+                <a href="/policy.html" className="underline" target="_blank" rel="noopener noreferrer">
                   Privacy Policy
-                </Link>
+                </a>
+
                 , which you acknowledge as being read. We may contact you in the
                 future but you have the right to opt-out of further
                 communications.
