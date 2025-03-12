@@ -57,7 +57,7 @@ const Newsroom = () => {
         className="max-container padding-container flex flex-col items-center gap-10 py-10 pb-32 bg-gradient-to-br from-indigo-900 to-blue-500 relative"
       >
         <h1 className="text-[50px] text-white font-semibold font-poppins text-center">
-        Check out the latest Caseltech  projects realizations
+          Check out the latest Caseltech projects realizations
         </h1>
 
         {/* Karuzela Swiper */}
@@ -65,10 +65,15 @@ const Newsroom = () => {
           <Swiper
             modules={[Navigation]}
             spaceBetween={20}
-            slidesPerView={3}
+            slidesPerView={3} // Domyślnie 3 slajdy na dużych ekranach
             navigation={{
               nextEl: ".swiper-button-next-custom",
               prevEl: ".swiper-button-prev-custom",
+            }}
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 10 }, // Na telefonach 1 karta
+              768: { slidesPerView: 2, spaceBetween: 15 }, // Na tabletach 2 karty
+              1024: { slidesPerView: 3, spaceBetween: 20 }, // Na komputerach 3 karty
             }}
             className="w-full"
           >
@@ -87,8 +92,6 @@ const Newsroom = () => {
             &#10095;
           </div>
         </div>
-
-        
       </section>
     </ScrollReveal>
   );
