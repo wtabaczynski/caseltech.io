@@ -24,7 +24,7 @@ const newsData = [
     buttonText: "Show more",
   },
   {
-    img: "/Galnaftogaz.jpg",
+    img: "/okko.jpeg",
     title: "Fraud detection in the transaction data of the loyalty system - Galnaftogaz.",
     link: "/galnaftogaz",
     buttonText: "Show more",
