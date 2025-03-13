@@ -30,13 +30,13 @@ export const NavLinks = [
 ];
 
 export const sectorsData = [
-  {
-    title: "Healthcare",
-    description: "Innovative solutions for the healthcare.",
-    image: "/healthcare.jpeg",
-    link: "/GMU",
-    isMiddle: false, // Karta po bokach
-  },
+  //{
+   // title: "Healthcare",
+   // description: "Innovative solutions for the healthcare.",
+   // image: "/healthcare.jpeg",
+   // link: "/GMU",
+    //isMiddle: false, // Karta po bokach
+  //},
   {
     title: "Retail",
     description: "Enhancing customer experience in retail.",

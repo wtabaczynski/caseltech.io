@@ -29,12 +29,12 @@ const newsData = [
     link: "/galnaftogaz",
     buttonText: "Show more",
   },
-  {
-    img: "/healthcare.jpeg",
-    title: "Revolutionizing Medical Diagnostics with George Mason University",
-    link: "/GMU",
-    buttonText: "Show more",
-  },
+  //{
+  //  img: "/healthcare.jpeg",
+   // title: "Revolutionizing Medical Diagnostics with George Mason University",
+   // link: "/GMU",
+   // buttonText: "Show more",
+//},
   {
     img: "/Skyspark.webp",
     title: "SkySpark environment with the Energy Twin extension for the industry - Naurotermika Spzoo.",
