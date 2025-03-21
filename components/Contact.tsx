@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import SubmitBtn from "./submit-btn"; // ✅ Import poprawiony
+import React, { useRef, useState, useEffect } from "react";
+import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
+import clsx from "clsx";
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -24,14 +24,11 @@ const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const controlsText = useAnimation();
   const controlsForm = useAnimation();
-  const { ref: textRef, inView: textInView } = useInView({
-    triggerOnce: false,
-  });
-  const { ref: formRefInView, inView: formInView } = useInView({
-    triggerOnce: false,
-  });
+  const { ref: textRef, inView: textInView } = useInView({ triggerOnce: false });
+  const { ref: formRefInView, inView: formInView } = useInView({ triggerOnce: false });
 
   const [loading, setLoading] = useState(false);
+  const [messageLength, setMessageLength] = useState(0);
 
   useEffect(() => {
     if (textInView) controlsText.start("visible");
@@ -45,10 +42,9 @@ const Contact = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (loading) return; // Zapobiega wielokrotnemu kliknięciu
+    if (loading) return;
     setLoading(true);
 
-    // Pobieramy wartości pól z formularza
     const formData = new FormData(event.currentTarget);
     const senderName = formData.get("senderName") as string;
     const senderEmail = formData.get("senderEmail") as string;
@@ -57,9 +53,7 @@ const Contact = () => {
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ senderName, senderEmail, message }),
       });
 
@@ -69,11 +63,9 @@ const Contact = () => {
       }
 
       toast.success("Email has been sent successfully!");
-      console.log("Email has been sent successfully!");
-
       formRef.current?.reset();
+      setMessageLength(0);
     } catch (error) {
-      console.log("Failed to send message.");
       toast.error(
         error instanceof Error ? error.message : "Failed to send message."
       );
@@ -97,6 +89,7 @@ const Contact = () => {
         >
           Make sure to contact us
         </motion.h1>
+
         <div className="flex flex-row gap-16 items-start justify-center">
           <motion.div
             className="w-1/2 ml-6"
@@ -127,7 +120,31 @@ const Contact = () => {
                 name="message"
                 required
                 placeholder="Message"
+                maxLength={5000}
+                onChange={(e) => setMessageLength(e.target.value.length)}
               />
+              {/* Pasek postępu */}
+              <div className="mt-2">
+                <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className={clsx(
+                      "h-full transition-all duration-300",
+                      messageLength >= 5000
+                        ? "bg-red-500"
+                        : messageLength >= 4000
+                        ? "bg-yellow-500"
+                        : "bg-blue-500"
+                    )}
+                    style={{
+                      width: `${Math.min((messageLength / 5000) * 100, 100)}%`,
+                    }}
+                  />
+                </div>
+                <p className="text-sm mt-1 text-right text-gray-600">
+                  {messageLength}/5000
+                </p>
+              </div>
+
               <SubmitBtn
                 className="ml-6 bg-indigo-800 hover:bg-indigo-900"
                 disabled={loading}
@@ -139,13 +156,12 @@ const Contact = () => {
                 <a href="/policy.html" className="underline" target="_blank" rel="noopener noreferrer">
                   Privacy Policy
                 </a>
-
                 , which you acknowledge as being read. We may contact you in the
-                future but you have the right to opt-out of further
-                communications.
+                future but you have the right to opt-out of further communications.
               </p>
             </form>
           </motion.div>
+
           <motion.div className="w-1/2 flex flex-col justify-center items-center">
             <Image
               src="/contact.png"

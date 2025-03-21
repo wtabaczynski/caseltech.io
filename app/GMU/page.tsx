@@ -35,50 +35,63 @@ const GMU = () => {
         animate="visible"
         variants={textVariants}
       >
-        {/* Lewa kolumna – nagłówek, tekst oraz przycisk */}
+        {/* Lewa strona z tekstem */}
         <motion.div
-          className="w-full md:w-1/2 text-black"
+          className="w-full md:w-1/2 text-black font-poppins text-lg md:pl-10"
           variants={textVariants}
         >
-          <h1 className="text-4xl font-poppins font-bold mb-6">
+          <p className="text-2xl font-bold mb-4">
+            Caseltech innovative medical system 
+          </p>
+          {/* <p className="text-2xl font-bold mb-4">
             Equitable and Accessible Software for Injury Detection
-          </h1>
-          <div className="text-lg leading-relaxed text-justify">
-            <p className="font-poppins font-bold underline">Sector: Healthcare</p>
-            <div className="h-6"></div>
-            <p className="mb-4 font-poppins">
-              The Caseltech provides an implementation of an interactive
-              database for the Equitable and Accessible Software for Injury
-              Detection (EAS-ID) project for George Mason University.
-            </p>
-            <p className="font-poppins">
-              The project involves building a unique data repository that
-              combines images of bruises and other injuries with measurements,
-              clinical and demographic information about the victim, and
-              information inferred by artificial intelligence.
-            </p>
-          </div>
-          <motion.div
-            className="mt-10 flex justify-end"
-            variants={buttonVariants}
-          >
-            <Link href="https://bruise.gmu.edu/about/">
-              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
-                Project website
-              </button>
-            </Link>
-          </motion.div>
+          </p> */}
+          <p className="text-lg font-bold underline mb-6">Sector: Healthcare</p>
+          {/* <p className="mb-4">
+            The Caseltech provides an implementation of an interactive database for the Equitable and Accessible Software for Injury Detection (EAS-ID) project.
+          </p> */}
+          {/* <p>
+            The project involves building a unique data repository that combines images of bruises and other injuries with measurements, clinical and demographic information about the victim, and information inferred by artificial intelligence.
+          </p> */}
+          <p className="mb-4"> 
+          Caseltech is implementing an interactive database for a group of institutions in the healthcare sector.
+          </p> 
+          <p className="mb-4">
+          The project involves creating a unique data repository that combines images and injury measurements with clinical and demographic information about the crime victim, as well as data inferred by artificial intelligence.
+          </p> 
         </motion.div>
 
-        {/* Prawa kolumna – obrazek */}
-        <motion.div className="w-full md:w-1/2" variants={imageVariants}>
-          <Image
-            src="/george.jpeg"
-            alt="GMU"
-            width={600}
-            height={350}
-            className="rounded-lg"
-          />
+        {/* Prawa strona z obrazkiem oraz przyciskami */}
+        <motion.div
+          className="flex flex-col items-center w-full md:w-1/2"
+          variants={textVariants}
+        >
+          <motion.div variants={imageVariants}>
+            <Image
+              src="/george.jpeg"
+              alt="GMU"
+              width={600}
+              height={350}
+              className="rounded-lg"
+            />
+          </motion.div>
+
+          {/* Responsywne przyciski */}
+          <motion.div
+            className="mt-10 flex flex-col md:flex-row justify-center items-center w-full gap-4"
+            variants={buttonVariants}
+          >
+            <Link href="/#contact-us">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition w-full md:w-auto text-center">
+                Contact Us
+              </button>
+            </Link>
+            {/* <Link href="https://bruise.gmu.edu/about/" target="_blank">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition w-full md:w-auto text-center">
+                Project website
+              </button>
+            </Link> */}
+          </motion.div>
         </motion.div>
       </motion.section>
     </motion.main>

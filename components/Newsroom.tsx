@@ -13,37 +13,37 @@ const NewsCards = dynamic(() => import("@/components/NewsCards"), { ssr: false }
 const newsData = [
   {
     img: "/otcf1.jpeg",
-    title: "Caseltech's Innovative Sales Forecasting Solutions with OTCF SA",
+    title: "Caseltech's Innovative Sales Forecasting Solutions",
     link: "/forecasting",
     buttonText: "Show more",
   },
   {
     img: "/4f1.jpeg",
-    title: "Automated Stocking of Assortment in Physical Stores with 4F",
+    title: "Automated Stocking of Assortment in Physical Stores",
     link: "/logistic",
     buttonText: "Show more",
   },
   {
     img: "/okko.jpeg",
-    title: "Fraud detection in the transaction data of the loyalty system - Galnaftogaz.",
+    title: "Fraud detection in the loyalty system transaction data",
     link: "/galnaftogaz",
     buttonText: "Show more",
   },
-  //{
-  //  img: "/healthcare.jpeg",
-   // title: "Revolutionizing Medical Diagnostics with George Mason University",
-   // link: "/GMU",
-   // buttonText: "Show more",
-//},
+  {
+   img: "/healthcare.jpeg",
+   title: "Revolutionizing Medical Diagnostics",
+   link: "/GMU",
+   buttonText: "Show more",
+},
   {
     img: "/Skyspark.webp",
-    title: "SkySpark environment with the Energy Twin extension for the industry - Naurotermika Spzoo.",
+    title: "SkySpark environment with the Energy Twin extension",
     link: "/skyspark",
     buttonText: "Show more",
   },
   {
     img: "/audit.jpeg",
-    title: "Audit of the billing system performance and customer settlement process - BIK SA",
+    title: "Audit of the billing system performance and customer settlement process",
     link: "/Tmatic",
     buttonText: "Show more",
   },

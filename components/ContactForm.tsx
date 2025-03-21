@@ -3,6 +3,9 @@
 import { useState } from "react";
 import SubmitBtn from "@/components/submit-btn";
 import { motion } from "framer-motion";
+import clsx from "clsx";
+
+const MAX_MESSAGE_LENGTH = 5000;
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +47,6 @@ const ContactForm = () => {
         setShowSuccessAnimation(true);
         setFormData({ senderName: "", senderEmail: "", message: "" });
 
-        // Ukryj animację po 3 sekundach
         setTimeout(() => setShowSuccessAnimation(false), 5000);
       } else {
         setError(result.error || "Something went wrong.");
@@ -90,15 +92,39 @@ const ContactForm = () => {
             name="message"
             placeholder="Message"
             required
+            maxLength={MAX_MESSAGE_LENGTH}
             className="input-field"
             value={formData.message}
             onChange={handleChange}
           />
+          {/* Pasek postępu i licznik */}
+          <div className="mt-2">
+            <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className={clsx(
+                  "h-full transition-all duration-300",
+                  formData.message.length >= MAX_MESSAGE_LENGTH
+                    ? "bg-red-500"
+                    : formData.message.length >= MAX_MESSAGE_LENGTH * 0.8
+                    ? "bg-yellow-500"
+                    : "bg-blue-500"
+                )}
+                style={{
+                  width: `${Math.min(
+                    (formData.message.length / MAX_MESSAGE_LENGTH) * 100,
+                    100
+                  )}%`,
+                }}
+              />
+            </div>
+            <p className="text-sm mt-1 text-right text-gray-600">
+              {formData.message.length}/{MAX_MESSAGE_LENGTH}
+            </p>
+          </div>
         </div>
         <SubmitBtn className="w-full" />
       </form>
 
-      {/* Animacja sukcesu */}
       {showSuccessAnimation && (
         <motion.div
           className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-green-500 text-white text-lg font-semibold rounded-lg"

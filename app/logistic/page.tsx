@@ -41,7 +41,7 @@ const Logistic = () => {
           variants={textVariants}
         >
           <p className="text-2xl font-bold">
-            Project for Optimizing Assortment Allocation in 4F Stores
+            Project for Optimizing Assortment Allocation
           </p>
           <div className="h-8"></div>
           <p className="text-lg font-bold underline">Sector: Retail</p>

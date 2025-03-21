@@ -30,43 +30,34 @@ const galnaftogaz = () => {
       animate="visible"
     >
       <motion.section
-        className="max-w-6xl flex flex-col md:flex-row items-center gap-10"
+        className="max-w-6xl flex flex-col md:flex-row items-start gap-10"
         initial="hidden"
         animate="visible"
         variants={textVariants}
       >
-        {/* Right side with text and heading */}
+        {/* Lewa strona z tekstem */}
         <motion.div
-          className="w-full md:w-1/2 text-black text-lg"
+          className="w-full md:w-1/2 text-black font-poppins text-lg md:pl-10"
           variants={textVariants}
         >
-          <h1 className="text-4xl font-poppins font-bold mb-6 text-black">
+          <p className="text-2xl font-bold mb-4">
             Fraud Detection in Transactional Data of the Fishka Loyalty System.
-            Galnaftogaz
-          </h1>
-
-          <p className="font-poppins font-bold underline text-xl mb-2">Sector: Retail</p>
-
-          <br />
-          <br />
-
-          <p className="font-poppins">
-            The 'Fraud Detection in Transactional Data of the Fishka Loyalty
-            System' project leverages machine learning algorithms to identify
-            anomalies in sales transactions. Loyalty transactions flagged as
-            suspicious undergo additional verification by the operational team
-            and are subsequently blocked in the system if confirmed as
-            fraudulent. The integration of ML/AI algorithms significantly
-            accelerates the analysis process and helps uncover fraud strategies
-            used by employees or program participants. This enables proactive
-            measures, such as refining program regulations or adjusting business
-            rules, to minimize the risk of fraudulent activities.
+          </p>
+          <p className="text-lg font-bold underline mb-6">Sector: Retail</p>
+          <p className="mb-4">
+            The 'Fraud Detection in Transactional Data of the Fishka Loyalty System' project leverages machine learning algorithms to identify anomalies in sales transactions.
+          </p>
+          <p className="mb-4">
+            Loyalty transactions flagged as suspicious undergo additional verification by the operational team and are subsequently blocked in the system if confirmed as fraudulent.
+          </p>
+          <p>
+            The integration of ML/AI algorithms significantly accelerates the analysis process and helps uncover fraud strategies used by employees or program participants. This enables proactive measures, such as refining program regulations or adjusting business rules, to minimize the risk of fraudulent activities.
           </p>
         </motion.div>
 
-        {/* Left side with image and right-aligned button */}
+        {/* Prawa strona z obrazkiem i przyciskami */}
         <motion.div
-          className="flex flex-col items-center md:items-start w-full md:w-1/2"
+          className="flex flex-col items-center w-full md:w-1/2"
           variants={textVariants}
         >
           <motion.div variants={imageVariants}>
@@ -79,14 +70,19 @@ const galnaftogaz = () => {
             />
           </motion.div>
           <motion.div
-            className="mt-10 flex justify-end w-full"
+            className="mt-10 flex flex-col md:flex-row justify-center items-center w-full gap-4"
             variants={buttonVariants}
           >
             <Link href="/#contact-us">
-              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition w-full md:w-auto text-center">
                 Contact Us
               </button>
             </Link>
+            {/* <Link href="https://example.com/galnaftogaz-project" target="_blank">
+              <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition w-full md:w-auto text-center">
+                Project website
+              </button>
+            </Link> */}
           </motion.div>
         </motion.div>
       </motion.section>
