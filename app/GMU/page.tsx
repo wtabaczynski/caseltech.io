@@ -41,7 +41,7 @@ const GMU = () => {
           variants={textVariants}
         >
           <p className="text-2xl font-bold mb-4">
-            Caseltech innovative medical system 
+            AI-Driven Injury Detection System
           </p>
           {/* <p className="text-2xl font-bold mb-4">
             Equitable and Accessible Software for Injury Detection
