@@ -75,7 +75,7 @@ const Products = () => {
             animate={controlsText}
             ref={textRef}
           >
-            Leverage our loyalty program to make your customer a greater
+            Leverage our new Loyalty Engine to make your customer a greater
             beneficiary of your own services
           </motion.h1>
           <motion.div
