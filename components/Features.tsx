@@ -32,57 +32,55 @@ const Features = () => {
   }, [imageInView, controlsImage]);
 
   return (
-    <section className="parallax-section max-container padding-container flex flex-col md:flex-row gap-20 py-10 md:py-20 bg-indigo-700">
-      <div className="flex flex-col md:flex-row w-full items-stretch">
-        {/* Text Section */}
-        <div className="w-full md:w-1/2 p-6 md:p-20 text-white flex items-center">
-          <motion.div
-            ref={textRef}
-            initial="hidden"
-            animate={controlsText}
-            variants={textVariants}
-            className="w-full"
-          >
-            <h1 className="text-[40px] font-poppins font-semibold text-white mb-6">
-              Features
-            </h1>
-            <ul className="list-disc pl-5 mb-6 text-[30px] font-poppins font-medium text-white space-y-4">
-              <li>Personalized offers – tailored to customer behaviors and preferences.</li>
-              <li>Automatic reward calculation – points, discounts, freebies, and cashback without the hassle.</li>
-              <li>Seamless integration – works with your POS, e-commerce, CRM, and mobile apps.</li>
-              <li>Advanced analytics – track promotion effectiveness and optimize your strategy.</li>
-            </ul>
-            <p className="mb-6 text-[30px] font-poppins font-medium text-white">
-              Maximize the impact of your loyalty program and keep customers coming back for more! Contact us today to see how we can help your brand grow!
-            </p>
-            <div>
-              <Link href="/#contact-us">
-                <button className="rounded border border-transparent bg-orange-500 px-12 py-4 text-lg font-semibold uppercase leading-normal text-white transition-colors duration-300 hover:bg-orange-600">
-                  Contact Us
-                </button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
+    <section className="parallax-section max-container padding-container flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-20 py-10 md:py-20 bg-indigo-700">
+      {/* Text Section */}
+      <div className="w-full md:w-1/2 px-6 md:px-20 text-white flex items-center justify-center">
+        <motion.div
+          ref={textRef}
+          initial="hidden"
+          animate={controlsText}
+          variants={textVariants}
+          className="w-full"
+        >
+          <h1 className="text-3xl md:text-[40px] font-poppins font-semibold text-white mb-6 text-center md:text-left">
+            Features
+          </h1>
+          <ul className="list-disc pl-6 mb-6 text-lg md:text-[30px] font-poppins font-medium space-y-4 text-left">
+            <li>Personalized offers – tailored to customer behaviors and preferences.</li>
+            <li>Automatic reward calculation – points, discounts, freebies, and cashback without the hassle.</li>
+            <li>Seamless integration – works with your POS, e-commerce, CRM, and mobile apps.</li>
+            <li>Advanced analytics – track promotion effectiveness and optimize your strategy.</li>
+          </ul>
+          <p className="mb-6 text-lg md:text-[30px] font-poppins font-medium text-center md:text-left">
+            Maximize the impact of your loyalty program and keep customers coming back for more! Contact us today to see how we can help your brand grow!
+          </p>
+          <div className="flex justify-center md:justify-start">
+            <Link href="/#contact-us">
+              <button className="rounded bg-orange-500 px-8 py-3 text-sm md:text-lg font-semibold uppercase text-white transition-colors duration-300 hover:bg-orange-600">
+                Contact Us
+              </button>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
 
-        {/* Image Section */}
-        <div className="w-full md:w-1/2 p-6 flex justify-center items-stretch">
-          <motion.div
-            ref={imageRef}
-            initial="hidden"
-            animate={controlsImage}
-            variants={imageVariants}
-            className="w-full h-full flex items-center justify-center"
-          >
-            <Image
-              src="/lo2.jpeg"
-              alt="Loyalty Program"
-              width={800}
-              height={1000}
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </motion.div>
-        </div>
+      {/* Image Section */}
+      <div className="w-full md:w-1/2 px-6 flex justify-center items-center">
+        <motion.div
+          ref={imageRef}
+          initial="hidden"
+          animate={controlsImage}
+          variants={imageVariants}
+          className="w-full h-full max-w-[600px]"
+        >
+          <Image
+            src="/lo2.jpeg"
+            alt="Loyalty Program"
+            width={800}
+            height={1000}
+            className="w-full h-auto object-cover rounded-lg shadow-lg"
+          />
+        </motion.div>
       </div>
     </section>
   );
