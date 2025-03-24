@@ -1,10 +1,10 @@
 "use client";
 
-import Link from 'next/link';
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Image from 'next/image';
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -21,7 +21,9 @@ const Features = () => {
   const controlsImage = useAnimation();
 
   const { ref: textRef, inView: textInView } = useInView({ triggerOnce: true });
-  const { ref: imageRef, inView: imageInView } = useInView({ triggerOnce: true });
+  const { ref: imageRef, inView: imageInView } = useInView({
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     if (textInView) controlsText.start("visible");
@@ -36,14 +38,36 @@ const Features = () => {
       <div className="flex flex-col md:flex-row w-full">
         {/* Text Section */}
         <div className="w-full md:w-1/2 p-6 md:p-20 text-white">
-          <motion.div ref={textRef} initial="hidden" animate={controlsText} variants={textVariants}>
+          <motion.div
+            ref={textRef}
+            initial="hidden"
+            animate={controlsText}
+            variants={textVariants}
+          >
             <p className="mb-3 text-[30px] font-poppins font-medium text-white text-center md:text-justify">
-              Personalized offers – tailored to customer behaviors and preferences.
-              Automatic reward calculation – points, discounts, freebies, and cashback without the hassle.  
-              Seamless integration – works with your POS, e-commerce, CRM, and mobile apps.
-              Advanced analytics – track promotion effectiveness and optimize your strategy. 
-              Maximize the impact of your loyalty program and keep customers coming back for more!
-              Contact us today to see how we can help your brand grow!
+              <ul className="list-disc pl-5 mt-4">
+                <li>
+                  Personalized offers – tailored to customer behaviors and
+                  preferences.
+                </li>
+                <li>
+                  Automatic reward calculation – points, discounts, freebies,
+                  and cashback without the hassle.
+                </li>
+                <li>
+                  Seamless integration – works with your POS, e-commerce, CRM,
+                  and mobile apps.
+                </li>
+                <li>
+                  Advanced analytics – track promotion effectiveness and
+                  optimize your strategy.
+                </li>
+              </ul>
+            </p>
+            <p className="mb-3 text-[30px] font-poppins font-medium text-white text-center md:text-justify">
+              Maximize the impact of your loyalty program and keep customers
+              coming back for more! Contact us today to see how we can help your
+              brand grow!
             </p>
             <Link href="/#contact-us">
               <button className="inline-block rounded border border-black bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-black text-center transition-colors duration-300 hover:bg-orange-500 hover:text-white hover:border-transparent">
@@ -55,7 +79,12 @@ const Features = () => {
 
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center p-6">
-          <motion.div ref={imageRef} initial="hidden" animate={controlsImage} variants={imageVariants}>
+          <motion.div
+            ref={imageRef}
+            initial="hidden"
+            animate={controlsImage}
+            variants={imageVariants}
+          >
             <Image
               src="/loy2.jpeg"
               alt="Loyalty Program"
