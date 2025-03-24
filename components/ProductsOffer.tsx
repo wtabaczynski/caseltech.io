@@ -68,6 +68,7 @@ const ProductsOffer = () => {
             <h1 className="text-[40px] text-gray-600 font-poppins font-semibold">
               Our Loyalty
             </h1>
+            <div className="h-4"></div>
             <p className="mb-3 text-[30px] font-poppins font-medium text-gray-600">
               Boost Sales and Customer Loyalty with an Intelligent Promotion Engine!
             </p>

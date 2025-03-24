@@ -32,7 +32,7 @@ export default function RootLayout({
           type="text/javascript"
         ></script>
       </head>
-      <body className="bg-white font-sans">
+      <body className="bg-white font-poppins">
         <Navbar />
         <AnimatePresence mode="wait">
           <main key={pathname} className="relative overflow-hidden">
