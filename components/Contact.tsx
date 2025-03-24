@@ -3,7 +3,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
-import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -78,10 +77,10 @@ const Contact = () => {
     <ScrollReveal>
       <section
         id="contact-us"
-        className="parallax-section max-container padding-container gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row bg-cover bg-center bg-white text-center items-center justify-center pl-6"
+        className="parallax-section max-container padding-container gap-20 py-10 pb-32 md:gap-28 md:py-20 bg-white text-center flex flex-col items-center justify-center"
       >
         <motion.h1
-          className="text-gray-600 text-4xl font-poppins font-bold text-center mb-10"
+          className="text-gray-600 text-4xl font-poppins font-bold mb-10"
           variants={textVariants}
           initial="hidden"
           animate={controlsText}
@@ -90,9 +89,9 @@ const Contact = () => {
           Make sure to contact us
         </motion.h1>
 
-        <div className="flex flex-row gap-16 items-start justify-center">
+        <div className="flex flex-col md:flex-row gap-16 items-start justify-center w-full">
           <motion.div
-            className="w-1/2 ml-6"
+            className="w-full md:w-1/2 md:ml-6"
             variants={formVariants}
             initial="hidden"
             animate={controlsForm}
@@ -123,7 +122,6 @@ const Contact = () => {
                 maxLength={5000}
                 onChange={(e) => setMessageLength(e.target.value.length)}
               />
-              {/* Pasek postępu */}
               <div className="mt-2">
                 <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
                   <div
@@ -149,11 +147,16 @@ const Contact = () => {
                 className="ml-6 bg-indigo-800 hover:bg-indigo-900"
                 disabled={loading}
               />
-              <p className="mt-4 text-xs text-gray-400">
+              <p className="mt-4 text-xs text-gray-400 text-left">
                 By clicking the 'Send message' button you consent to processing
                 your data and contacting you to fulfill your request according
                 to our{" "}
-                <a href="/policy.html" className="underline" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="/policy.html"
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Privacy Policy
                 </a>
                 , which you acknowledge as being read. We may contact you in the
@@ -162,7 +165,7 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          <motion.div className="w-1/2 flex flex-col justify-center items-center">
+          <motion.div className="w-full md:w-1/2 flex flex-col justify-center items-center">
             <Image
               src="/contact.png"
               alt="Medical Illustration"

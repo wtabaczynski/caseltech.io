@@ -52,20 +52,16 @@ const Features = () => {
             <li>Advanced analytics – track promotion effectiveness and optimize your strategy.</li>
           </ul>
           <p className="mb-6 text-lg md:text-[30px] font-poppins font-medium text-center md:text-left">
-            Maximize the impact of your loyalty program and keep customers coming back for more! Contact us today to see how we can help your brand grow!
+            Maximize the impact of your loyalty program and keep customers coming back for more!
           </p>
-          <div className="flex justify-center md:justify-start">
-            <Link href="/#contact-us">
-              <button className="rounded bg-orange-500 px-8 py-3 text-sm md:text-lg font-semibold uppercase text-white transition-colors duration-300 hover:bg-orange-600">
-                Contact Us
-              </button>
-            </Link>
-          </div>
+          <p className="mb-6 text-lg md:text-[30px] font-poppins font-medium text-center md:text-left">
+            Contact us today to see how we can help your brand grow!
+          </p>
         </motion.div>
       </div>
 
       {/* Image Section */}
-      <div className="w-full md:w-1/2 px-6 flex justify-center items-center">
+      <div className="w-full md:w-1/2 px-6 flex flex-col items-center">
         <motion.div
           ref={imageRef}
           initial="hidden"
@@ -81,6 +77,15 @@ const Features = () => {
             className="w-full h-auto object-cover rounded-lg shadow-lg"
           />
         </motion.div>
+
+        {/* Button under image */}
+        <div className="mt-8 flex justify-center">
+          <Link href="/#contact-us">
+            <button className="rounded bg-orange-500 px-8 py-3 text-sm md:text-lg font-semibold uppercase text-white transition-colors duration-300 hover:bg-orange-600">
+              Contact Us
+            </button>
+          </Link>
+        </div>
       </div>
     </section>
   );
