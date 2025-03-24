@@ -37,7 +37,7 @@ const Features = () => {
     <section className="parallax-section max-container padding-container flex flex-col md:flex-row gap-20 py-10 md:py-20 bg-indigo-700">
       <div className="flex flex-col md:flex-row w-full">
         {/* Text Section */}
-        <div className="w-full md:w-1/2 p-6 md:p-20 text-white">
+        <div className="w-full md:w-1/2 p-6 md:p-20 text-white flex flex-col justify-between">
           <motion.div
             ref={textRef}
             initial="hidden"
@@ -64,33 +64,37 @@ const Features = () => {
                 </li>
               </ul>
             </p>
-            <p className="mb-3 text-[30px] font-poppins font-medium text-white text-center md:text-justify">
+            <p className="mb-6 text-[30px] font-poppins font-medium text-white text-center md:text-justify">
               Maximize the impact of your loyalty program and keep customers
               coming back for more! Contact us today to see how we can help your
               brand grow!
             </p>
-            <Link href="/#contact-us">
-              <button className="inline-block rounded border border-black bg-white px-6 py-2 text-xs font-medium uppercase leading-normal text-black text-center transition-colors duration-300 hover:bg-orange-500 hover:text-white hover:border-transparent">
+            <div className="flex justify-center">
+              <Link href="/#contact-us">
+              <button className="rounded border border-transparent bg-orange-500 px-12 py-4 text-lg font-semibold uppercase leading-normal text-white text-center transition-colors duration-300 hover:bg-orange-600 hover:text-white hover:border-transparent">
                 Contact Us
               </button>
-            </Link>
+              </Link>
+            </div>
           </motion.div>
         </div>
 
         {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center p-6">
+        <div className="w-full md:w-1/2 p-6 flex items-stretch">
           <motion.div
             ref={imageRef}
             initial="hidden"
             animate={controlsImage}
             variants={imageVariants}
+            className="w-full h-full"
           >
             <Image
-              src="/loy2.jpeg"
+              src="/lo2.jpeg"
               alt="Loyalty Program"
-              width={500}
-              height={500}
-              className="w-full md:w-[500px] h-auto object-contain rounded-lg shadow-lg"
+              layout="responsive"
+              width={800}
+              height={1000}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
             />
           </motion.div>
         </div>
