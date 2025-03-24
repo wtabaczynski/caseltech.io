@@ -76,16 +76,14 @@ const Features = () => {
             height={1000}
             className="w-full h-auto object-cover rounded-lg shadow-lg"
           />
-        </motion.div>
-
-        {/* Button under image */}
-        <div className="mt-8 flex justify-center">
-          <Link href="/#contact-us">
-            <button className="rounded bg-orange-500 px-8 py-3 text-sm md:text-lg font-semibold uppercase text-white transition-colors duration-300 hover:bg-orange-600">
-              Contact Us
-            </button>
-          </Link>
-        </div>
+          <div className="mt-8 flex justify-center">
+            <Link href="/#contact-us">
+              <button className="rounded bg-orange-500 px-8 py-3 text-sm md:text-lg font-semibold uppercase text-white transition-colors duration-300 hover:bg-orange-600">
+                Contact Us
+              </button>
+            </Link>
+          </div>
+        </motion.div>        
       </div>
     </section>
   );
