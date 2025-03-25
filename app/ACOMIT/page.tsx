@@ -78,7 +78,7 @@ const Acomit = () => {
           <div className="h-5"></div>
 
           <p className="font-poppins">
-            ACOMIT Sp. z o.o. together with Caseltech Sp. z o.o. is conducting
+            Acomit sp. z o.o. together with Caseltech sp. z o.o. is conducting
             an audit of the billing system for BIK S.A. in terms of high system
             availability and operational processes. The audit project covered
             the following areas:
