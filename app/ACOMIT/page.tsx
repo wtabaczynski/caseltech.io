@@ -78,10 +78,10 @@ const Tmatic = () => {
           <div className="h-5"></div>
 
           <p className="font-poppins">
-            T-Matic Grupa Computer Plus Sp z o.o., together with Caseltech Sp. z
-            o.o., is conducting an audit of the billing system for BIK S.A. in
-            terms of high system availability and operational processes. The
-            audit project covered the following areas:
+            ACOMIT Sp. z o.o. together with Caseltech Sp. z o.o. is conducting
+            an audit of the billing system for BIK S.A. in terms of high system
+            availability and operational processes. The audit project covered
+            the following areas:
           </p>
           <ul className="list-disc pl-5">
             <li className="font-poppins">
