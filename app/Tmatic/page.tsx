@@ -49,7 +49,10 @@ const Tmatic = () => {
               className="rounded-lg"
             />
           </motion.div>
-          <motion.div className="mt-6 flex justify-center" variants={buttonVariants}>
+          <motion.div
+            className="mt-6 flex justify-center"
+            variants={buttonVariants}
+          >
             <Link href="/#contact-us">
               <button className="px-6 py-3 bg-blue-800 text-white font-poppins font-bold uppercase rounded-md hover:bg-blue-900 transition">
                 Contact Us
@@ -63,12 +66,17 @@ const Tmatic = () => {
           className="w-full md:w-1/2 text-black text-lg flex flex-col"
           variants={textVariants}
         >
-          <h2 className="font-poppins font-bold underline">Audit of the billing system performance and customer settlement process</h2>
+          <h2 className="font-poppins font-bold">
+            Audit of the billing system performance and customer settlement
+            process
+          </h2>
           <div className="h-5"></div>
-          
-          <h3 className="font-poppins font-bold">Sector: Financial</h3>
-          <div className="h-5"></div> 
-          
+
+          <h3 className="font-poppins font-bold underline">
+            Sector: Financial
+          </h3>
+          <div className="h-5"></div>
+
           <p className="font-poppins">
             T-Matic Grupa Computer Plus Sp z o.o., together with Caseltech Sp. z
             o.o., is conducting an audit of the billing system for BIK S.A. in
@@ -94,7 +102,8 @@ const Tmatic = () => {
             </li>
           </ul>
           <p className="font-poppins">
-            The auditors presented a report with recommendations for improvements in case issues were identified.
+            The auditors presented a report with recommendations for
+            improvements in case issues were identified.
           </p>
         </motion.div>
       </motion.section>
