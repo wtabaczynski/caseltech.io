@@ -22,7 +22,7 @@ const buttonVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-const Tmatic = () => {
+const Acomit = () => {
   return (
     <motion.main
       className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-10"
@@ -43,7 +43,7 @@ const Tmatic = () => {
           <motion.div variants={imageVariants}>
             <Image
               src="/audyt1.jpeg"
-              alt="GMU"
+              alt="ACOMIT"
               width={600}
               height={350}
               className="rounded-lg"
@@ -111,4 +111,4 @@ const Tmatic = () => {
   );
 };
 
-export default Tmatic;
+export default Acomit;

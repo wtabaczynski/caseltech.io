@@ -16,7 +16,11 @@ type ContactFormEmailProps = {
   senderName: string;
 };
 
-export default function ContactFormEmail({ senderEmail, message, senderName }: ContactFormEmailProps) {
+export default function ContactFormEmail({
+  senderEmail,
+  message,
+  senderName,
+}: ContactFormEmailProps) {
   return (
     <Html>
       <Head />
@@ -25,9 +29,15 @@ export default function ContactFormEmail({ senderEmail, message, senderName }: C
         <Body className="bg-gray-100 text-black">
           <Container>
             <Section className="bg-white border border-gray-300 my-10 px-10 py-4 rounded-md shadow">
-              <Heading className="leading-tight">New Contact Form Submission</Heading>
-              <Text><strong>From:</strong> {senderName} ({senderEmail})</Text>
-              <Text><strong>Message:</strong></Text>
+              <Heading className="leading-tight">
+                New Contact Form Submission
+              </Heading>
+              <Text>
+                <strong>From:</strong> {senderName} ({senderEmail})
+              </Text>
+              <Text>
+                <strong>Message:</strong>
+              </Text>
               <Text>{message}</Text>
               <Hr />
             </Section>

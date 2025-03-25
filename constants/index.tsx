@@ -31,10 +31,10 @@ export const NavLinks = [
 
 export const sectorsData = [
   {
-   title: "Healthcare",
-   description: "Innovative solutions for the healthcare.",
-   image: "/healthcare.jpeg",
-   link: "/GMU",
+    title: "Healthcare",
+    description: "Innovative solutions for the healthcare.",
+    image: "/healthcare.jpeg",
+    link: "/GMU",
     isMiddle: false, // Karta po bokach
   },
   {
@@ -55,7 +55,7 @@ export const sectorsData = [
     title: "Financial",
     description: "Reliable solutions for the financial sector.",
     image: "/audit.jpeg",
-    link: "/Tmatic",
+    link: "/ACOMIT",
     isMiddle: false, // Środkowa karta
   },
 ];

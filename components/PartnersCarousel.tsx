@@ -11,7 +11,7 @@ const partners = [
   "/GMU.png",
   "/BIK.png",
   "/okko.png",
-  "/T-matic.png",
+  // "/T-matic.png",
 ];
 
 const PartnersCarousel = () => {
@@ -32,14 +32,23 @@ const PartnersCarousel = () => {
           className="flex items-center"
         >
           {[...partners, ...partners].map((logo, index) => (
-            <SwiperSlide key={index} className="flex justify-center items-center">
-              <Image src={logo} alt={`Partner ${index}`} width={150} height={50} />
+            <SwiperSlide
+              key={index}
+              className="flex justify-center items-center"
+            >
+              <Image
+                src={logo}
+                alt={`Partner ${index}`}
+                width={150}
+                height={50}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
       <p className="mt-6 text-center text-lg w-3/4">
-        Caseltech jako pionier w swojej dziedzinie rozpoczął współpracę z powyższymi partnerami.
+        Caseltech jako pionier w swojej dziedzinie rozpoczął współpracę z
+        powyższymi partnerami.
       </p>
     </div>
   );

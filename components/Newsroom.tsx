@@ -8,7 +8,9 @@ import { Navigation } from "swiper/modules";
 import dynamic from "next/dynamic";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const NewsCards = dynamic(() => import("@/components/NewsCards"), { ssr: false });
+const NewsCards = dynamic(() => import("@/components/NewsCards"), {
+  ssr: false,
+});
 
 const newsData = [
   {
@@ -30,11 +32,11 @@ const newsData = [
     buttonText: "Show more",
   },
   {
-   img: "/healthcare.jpeg",
-   title: "Revolutionizing Medical Diagnostics",
-   link: "/GMU",
-   buttonText: "Show more",
-},
+    img: "/healthcare.jpeg",
+    title: "Revolutionizing Medical Diagnostics",
+    link: "/GMU",
+    buttonText: "Show more",
+  },
   {
     img: "/Skyspark.webp",
     title: "SkySpark environment with the Energy Twin extension",
@@ -43,8 +45,9 @@ const newsData = [
   },
   {
     img: "/audit.jpeg",
-    title: "Audit of the billing system performance and customer settlement process",
-    link: "/Tmatic",
+    title:
+      "Audit of the billing system performance and customer settlement process",
+    link: "/ACOMIT",
     buttonText: "Show more",
   },
 ];
@@ -78,7 +81,10 @@ const Newsroom = () => {
             className="w-full"
           >
             {newsData.map((card, index) => (
-              <SwiperSlide key={index} className="flex justify-center min-h-[500px]">
+              <SwiperSlide
+                key={index}
+                className="flex justify-center min-h-[500px]"
+              >
                 <NewsCards {...card} />
               </SwiperSlide>
             ))}
