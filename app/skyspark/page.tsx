@@ -70,10 +70,10 @@ const Skyspark = () => {
           <div className="font-poppins h-6"></div>
           <p>
             Migration of the SkySpark system with the Energy Twin plugin for the
-            NOTOS project to a new infrastructure. Provision of an access
+            NOTOS project to a new infrastructure, and provision of an access
             service to the SkySpark system from the Energy Twin plugin,
-            including communication with hvac system and IoT devices using the
-            MQTT protocol.
+            including communication with the HVAC system and IoT devices using
+            the MQTT protocol.
           </p>
         </motion.div>
       </motion.section>
