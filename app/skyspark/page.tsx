@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -10,7 +10,11 @@ const textVariants = {
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 const buttonVariants = {
@@ -20,24 +24,30 @@ const buttonVariants = {
 
 const Skyspark = () => {
   return (
-    <motion.main 
+    <motion.main
       className="flex flex-col items-center justify-center min-h-screen bg-white text-black p-10"
       initial="hidden"
       animate="visible"
     >
-      <motion.section 
+      <motion.section
         className="max-w-6xl flex flex-col md:flex-row items-center gap-10"
         initial="hidden"
         animate="visible"
         variants={textVariants}
       >
         {/* Lewa strona z obrazkiem oraz przyciskami */}
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center md:items-start w-full md:w-1/2"
           variants={textVariants}
         >
           <motion.div variants={imageVariants}>
-            <Image src="/Skyspark.webp" alt="Skyspark" width={600} height={350} className="rounded-lg" />
+            <Image
+              src="/Skyspark.webp"
+              alt="Skyspark"
+              width={600}
+              height={350}
+              className="rounded-lg"
+            />
           </motion.div>
           <motion.div className="mt-10 flex gap-5" variants={buttonVariants}>
             <Link href="/#contact-us">
@@ -47,9 +57,9 @@ const Skyspark = () => {
             </Link>
           </motion.div>
         </motion.div>
-        
+
         {/* Prawa strona z nagłówkiem oraz tekstem */}
-        <motion.div 
+        <motion.div
           className="w-full md:w-1/2 text-black text-lg"
           variants={textVariants}
         >
@@ -59,7 +69,11 @@ const Skyspark = () => {
           <p className="font-poppins font-bold underline">Sector: Industry</p>
           <div className="font-poppins h-6"></div>
           <p>
-            Migration of the SkySpark system with the Energy Twin plugin for the NOTOS project to a new infrastructure. Provision of an access service to the SkySpark system from the Energy Twin plugin, including communication with external hwac system and IoT devices using the MQTT protocol.
+            Migration of the SkySpark system with the Energy Twin plugin for the
+            NOTOS project to a new infrastructure. Provision of an access
+            service to the SkySpark system from the Energy Twin plugin,
+            including communication with hvac system and IoT devices using the
+            MQTT protocol.
           </p>
         </motion.div>
       </motion.section>
