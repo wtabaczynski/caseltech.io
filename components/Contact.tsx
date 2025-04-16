@@ -8,6 +8,13 @@ import { useInView } from "react-intersection-observer";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
 import clsx from "clsx";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'; // Correct for LinkedIn
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // Correct for the solid envelope
+
+import Link from "next/link";
+
+
 
 const textVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -178,6 +185,14 @@ const Contact = () => {
               <p className="font-poppins font-semibold">31-150 Kraków</p>
               <p className="font-poppins font-semibold">+48 797 448 799</p>
               <p className="font-poppins font-semibold">info@caseltech.com</p>
+              <div className="flex gap-4 mt-2">
+                  <Link href="https://www.linkedin.com/company/caseltech-sp-z-o-o/" target="_blank">
+                    <FontAwesomeIcon icon={faLinkedin} className="text-gray-400 text-3xl hover:text-gray-600 transition" />
+                  </Link>
+                  <Link href="mailto:info@caseltech.com">
+                    <FontAwesomeIcon icon={faEnvelope} className="text-gray-400 text-3xl hover:text-gray-600 transition" />
+                  </Link>
+                </div>
             </div>
           </motion.div>
         </div>
